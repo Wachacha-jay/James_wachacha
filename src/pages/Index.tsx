@@ -1,46 +1,23 @@
-
 import { useState, useEffect } from 'react';
-import { ChevronDown, Github, Linkedin, Mail, ExternalLink, Database, BarChart3, Brain, Code2, TrendingUp, Award } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, Mail, ExternalLink, Database, BarChart3, Brain, Code2, TrendingUp, Award, Plus, Edit, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import AddProjectForm from '@/components/AddProjectForm';
+
+interface Project {
+  title: string;
+  description: string;
+  tech: string[];
+  image: string;
+  github: string;
+  demo: string;
+}
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
-      const current = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
-      });
-      if (current) setActiveSection(current);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const skills = [
-    { name: 'Python', level: 95, icon: Code2 },
-    { name: 'Machine Learning', level: 90, icon: Brain },
-    { name: 'Data Analysis', level: 92, icon: BarChart3 },
-    { name: 'SQL', level: 88, icon: Database },
-    { name: 'Statistics', level: 85, icon: TrendingUp },
-    { name: 'Deep Learning', level: 82, icon: Brain },
-  ];
-
-  const projects = [
+  const [showAddProject, setShowAddProject] = useState(false);
+  const [projects, setProjects] = useState<Project[]>([
     {
       title: 'Customer Churn Prediction',
       description: 'Built a machine learning model to predict customer churn with 94% accuracy using ensemble methods.',
@@ -65,6 +42,47 @@ const Index = () => {
       github: '#',
       demo: '#'
     }
+  ]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
+      const current = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      if (current) setActiveSection(current);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleAddProject = (newProject: Project) => {
+    setProjects([...projects, newProject]);
+    setShowAddProject(false);
+  };
+
+  const handleDeleteProject = (index: number) => {
+    setProjects(projects.filter((_, i) => i !== index));
+  };
+
+  const skills = [
+    { name: 'Python', level: 95, icon: Code2 },
+    { name: 'Machine Learning', level: 90, icon: Brain },
+    { name: 'Data Analysis', level: 92, icon: BarChart3 },
+    { name: 'SQL', level: 88, icon: Database },
+    { name: 'Statistics', level: 85, icon: TrendingUp },
+    { name: 'Deep Learning', level: 82, icon: Brain },
   ];
 
   const experiences = [
@@ -221,16 +239,45 @@ const Index = () => {
       {/* Projects Section */}
       <section id="projects" className="py-20 bg-black/20">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-white text-center mb-12">Featured Projects</h2>
+          <div className="flex justify-between items-center mb-12">
+            <h2 className="text-4xl font-bold text-white">Featured Projects</h2>
+            <Button 
+              onClick={() => setShowAddProject(true)}
+              className="bg-blue-600 hover:bg-blue-700"
+            >
+              <Plus className="w-4 h-4 mr-2" />
+              Add Project
+            </Button>
+          </div>
+
+          {showAddProject && (
+            <div className="mb-8">
+              <AddProjectForm 
+                onAddProject={handleAddProject}
+                onCancel={() => setShowAddProject(false)}
+              />
+            </div>
+          )}
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="bg-white/5 backdrop-blur-lg border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105">
+              <Card key={index} className="bg-white/5 backdrop-blur-lg border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105 group">
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img 
-                    src={project.image} 
+                    src={project.image || 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=500&h=300&fit=crop'} 
                     alt={project.title}
                     className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
                   />
+                  <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Button
+                      size="sm"
+                      variant="destructive"
+                      onClick={() => handleDeleteProject(index)}
+                      className="bg-red-600/80 hover:bg-red-600"
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </Button>
+                  </div>
                 </div>
                 <CardHeader>
                   <CardTitle className="text-white">{project.title}</CardTitle>
@@ -247,14 +294,22 @@ const Index = () => {
                     ))}
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" variant="outline" className="border-white/30 text-white hover:bg-white/10">
-                      <Github className="w-4 h-4 mr-1" />
-                      Code
-                    </Button>
-                    <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
-                      <ExternalLink className="w-4 h-4 mr-1" />
-                      Demo
-                    </Button>
+                    {project.github && (
+                      <Button size="sm" variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <Github className="w-4 h-4 mr-1" />
+                          Code
+                        </a>
+                      </Button>
+                    )}
+                    {project.demo && (
+                      <Button size="sm" className="bg-blue-600 hover:bg-blue-700" asChild>
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-4 h-4 mr-1" />
+                          Demo
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>
