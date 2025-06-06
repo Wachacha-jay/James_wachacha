@@ -3,6 +3,7 @@ import { ChevronDown, Github, Linkedin, Mail, ExternalLink, Database, BarChart3,
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import AddProjectForm from '@/components/AddProjectForm';
 
 interface Project {
@@ -12,11 +13,13 @@ interface Project {
   image: string;
   github: string;
   demo: string;
+  category: 'machine-learning' | 'deep-learning' | 'ai-automation';
 }
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [showAddProject, setShowAddProject] = useState(false);
+  const [activeTab, setActiveTab] = useState<'machine-learning' | 'deep-learning' | 'ai-automation'>('machine-learning');
   const [projects, setProjects] = useState<Project[]>([
     {
       title: 'Customer Churn Prediction',
@@ -24,7 +27,8 @@ const Index = () => {
       tech: ['Python', 'Scikit-learn', 'Pandas', 'XGBoost'],
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
       github: '#',
-      demo: '#'
+      demo: '#',
+      category: 'machine-learning'
     },
     {
       title: 'Sales Forecasting Dashboard',
@@ -32,15 +36,26 @@ const Index = () => {
       tech: ['Python', 'Streamlit', 'Plotly', 'ARIMA'],
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop',
       github: '#',
-      demo: '#'
+      demo: '#',
+      category: 'machine-learning'
     },
     {
-      title: 'Sentiment Analysis API',
-      description: 'RESTful API for real-time sentiment analysis of social media data using NLP techniques.',
-      tech: ['Python', 'Flask', 'NLTK', 'Docker'],
+      title: 'Neural Network Image Classifier',
+      description: 'Deep learning model for image classification with 98% accuracy on CIFAR-10 dataset.',
+      tech: ['Python', 'TensorFlow', 'Keras', 'CNN'],
+      image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=500&h=300&fit=crop',
+      github: '#',
+      demo: '#',
+      category: 'deep-learning'
+    },
+    {
+      title: 'Document Processing Bot',
+      description: 'Automated document processing system using NLP and OCR for business workflows.',
+      tech: ['Python', 'Tesseract', 'spaCy', 'RPA'],
       image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop',
       github: '#',
-      demo: '#'
+      demo: '#',
+      category: 'ai-automation'
     }
   ]);
 
@@ -67,13 +82,34 @@ const Index = () => {
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleAddProject = (newProject: Project) => {
-    setProjects([...projects, newProject]);
+  const handleAddProject = (newProject: Omit<Project, 'category'>) => {
+    const projectWithCategory: Project = {
+      ...newProject,
+      category: activeTab
+    };
+    setProjects([...projects, projectWithCategory]);
     setShowAddProject(false);
   };
 
-  const handleDeleteProject = (index: number) => {
-    setProjects(projects.filter((_, i) => i !== index));
+  const handleDeleteProject = (index: number, category: string) => {
+    setProjects(projects.filter((project, i) => !(i === index && project.category === category)));
+  };
+
+  const getProjectsByCategory = (category: string) => {
+    return projects.filter(project => project.category === category);
+  };
+
+  const getCategoryDisplayName = (category: string) => {
+    switch (category) {
+      case 'machine-learning':
+        return 'Machine Learning';
+      case 'deep-learning':
+        return 'Deep Learning';
+      case 'ai-automation':
+        return 'AI Automation';
+      default:
+        return category;
+    }
   };
 
   const skills = [
@@ -239,7 +275,7 @@ const Index = () => {
       {/* Projects Section */}
       <section id="projects" className="py-20 bg-black/20">
         <div className="container mx-auto px-6">
-          <div className="flex justify-between items-center mb-12">
+          <div className="flex justify-between items-center mb-8">
             <h2 className="text-4xl font-bold text-white">Featured Projects</h2>
             <Button 
               onClick={() => setShowAddProject(true)}
@@ -255,66 +291,105 @@ const Index = () => {
               <AddProjectForm 
                 onAddProject={handleAddProject}
                 onCancel={() => setShowAddProject(false)}
+                selectedCategory={activeTab}
               />
             </div>
           )}
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <Card key={index} className="bg-white/5 backdrop-blur-lg border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105 group">
-                <div className="relative overflow-hidden rounded-t-lg">
-                  <img 
-                    src={project.image || 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=500&h=300&fit=crop'} 
-                    alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
-                  />
-                  <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Button
-                      size="sm"
-                      variant="destructive"
-                      onClick={() => handleDeleteProject(index)}
-                      className="bg-red-600/80 hover:bg-red-600"
-                    >
-                      <Trash2 className="w-4 h-4" />
-                    </Button>
-                  </div>
+          <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as any)} className="w-full">
+            <TabsList className="grid w-full grid-cols-3 bg-white/10 mb-8">
+              <TabsTrigger 
+                value="machine-learning" 
+                className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-white/70"
+              >
+                Machine Learning
+              </TabsTrigger>
+              <TabsTrigger 
+                value="deep-learning"
+                className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-white/70"
+              >
+                Deep Learning
+              </TabsTrigger>
+              <TabsTrigger 
+                value="ai-automation"
+                className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-white/70"
+              >
+                AI Automation
+              </TabsTrigger>
+            </TabsList>
+
+            {['machine-learning', 'deep-learning', 'ai-automation'].map((category) => (
+              <TabsContent key={category} value={category}>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {getProjectsByCategory(category).map((project, index) => (
+                    <Card key={`${category}-${index}`} className="bg-white/5 backdrop-blur-lg border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105 group">
+                      <div className="relative overflow-hidden rounded-t-lg">
+                        <img 
+                          src={project.image || 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=500&h=300&fit=crop'} 
+                          alt={project.title}
+                          className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+                        />
+                        <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <Button
+                            size="sm"
+                            variant="destructive"
+                            onClick={() => handleDeleteProject(projects.findIndex(p => p === project), category)}
+                            className="bg-red-600/80 hover:bg-red-600"
+                          >
+                            <Trash2 className="w-4 h-4" />
+                          </Button>
+                        </div>
+                      </div>
+                      <CardHeader>
+                        <CardTitle className="text-white">{project.title}</CardTitle>
+                        <CardDescription className="text-white/70">
+                          {project.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {project.tech.map((tech) => (
+                            <Badge key={tech} variant="secondary" className="bg-blue-600/20 text-blue-300">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                        <div className="flex gap-2">
+                          {project.github && (
+                            <Button size="sm" variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
+                              <a href={project.github} target="_blank" rel="noopener noreferrer">
+                                <Github className="w-4 h-4 mr-1" />
+                                Code
+                              </a>
+                            </Button>
+                          )}
+                          {project.demo && (
+                            <Button size="sm" className="bg-blue-600 hover:bg-blue-700" asChild>
+                              <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                                <ExternalLink className="w-4 h-4 mr-1" />
+                                Demo
+                              </a>
+                            </Button>
+                          )}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+
+                  {getProjectsByCategory(category).length === 0 && (
+                    <div className="col-span-full text-center py-12">
+                      <p className="text-white/60 text-lg">
+                        No {getCategoryDisplayName(category).toLowerCase()} projects yet.
+                      </p>
+                      <p className="text-white/40 text-sm mt-2">
+                        Click "Add Project" to add your first {getCategoryDisplayName(category).toLowerCase()} project.
+                      </p>
+                    </div>
+                  )}
                 </div>
-                <CardHeader>
-                  <CardTitle className="text-white">{project.title}</CardTitle>
-                  <CardDescription className="text-white/70">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech) => (
-                      <Badge key={tech} variant="secondary" className="bg-blue-600/20 text-blue-300">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                  <div className="flex gap-2">
-                    {project.github && (
-                      <Button size="sm" variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
-                        <a href={project.github} target="_blank" rel="noopener noreferrer">
-                          <Github className="w-4 h-4 mr-1" />
-                          Code
-                        </a>
-                      </Button>
-                    )}
-                    {project.demo && (
-                      <Button size="sm" className="bg-blue-600 hover:bg-blue-700" asChild>
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="w-4 h-4 mr-1" />
-                          Demo
-                        </a>
-                      </Button>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
+              </TabsContent>
             ))}
-          </div>
+          </Tabs>
         </div>
       </section>
 

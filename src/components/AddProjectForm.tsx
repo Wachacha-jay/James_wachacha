@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -17,9 +16,10 @@ interface Project {
 interface AddProjectFormProps {
   onAddProject: (project: Project) => void;
   onCancel: () => void;
+  selectedCategory: string;
 }
 
-const AddProjectForm = ({ onAddProject, onCancel }: AddProjectFormProps) => {
+const AddProjectForm = ({ onAddProject, onCancel, selectedCategory }: AddProjectFormProps) => {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -29,6 +29,19 @@ const AddProjectForm = ({ onAddProject, onCancel }: AddProjectFormProps) => {
   });
   const [techStack, setTechStack] = useState<string[]>([]);
   const [currentTech, setCurrentTech] = useState('');
+
+  const getCategoryDisplayName = (category: string) => {
+    switch (category) {
+      case 'machine-learning':
+        return 'Machine Learning';
+      case 'deep-learning':
+        return 'Deep Learning';
+      case 'ai-automation':
+        return 'AI Automation';
+      default:
+        return category;
+    }
+  };
 
   const handleAddTech = () => {
     if (currentTech.trim() && !techStack.includes(currentTech.trim())) {
@@ -55,7 +68,7 @@ const AddProjectForm = ({ onAddProject, onCancel }: AddProjectFormProps) => {
     <Card className="bg-white/5 backdrop-blur-lg border-white/10">
       <CardHeader>
         <CardTitle className="text-white flex items-center justify-between">
-          Add New Project
+          Add New {getCategoryDisplayName(selectedCategory)} Project
           <Button 
             variant="ghost" 
             size="sm" 
