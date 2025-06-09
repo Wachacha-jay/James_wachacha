@@ -1,5 +1,6 @@
+
 import { useState, useEffect } from 'react';
-import { ChevronDown, Github, Linkedin, Mail, ExternalLink, Database, BarChart3, Brain, Code2, TrendingUp, Award, Plus, Edit, Trash2 } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, Mail, ExternalLink, Database, BarChart3, Brain, Code2, TrendingUp, Award, Plus, Edit, Trash2, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -14,6 +15,8 @@ interface Project {
   github: string;
   demo: string;
   category: 'machine-learning' | 'deep-learning' | 'ai-automation';
+  date?: string;
+  results?: string;
 }
 
 const Index = () => {
@@ -22,40 +25,75 @@ const Index = () => {
   const [activeTab, setActiveTab] = useState<'machine-learning' | 'deep-learning' | 'ai-automation'>('machine-learning');
   const [projects, setProjects] = useState<Project[]>([
     {
-      title: 'Customer Churn Prediction',
-      description: 'Built a machine learning model to predict customer churn with 94% accuracy using ensemble methods.',
-      tech: ['Python', 'Scikit-learn', 'Pandas', 'XGBoost'],
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
+      title: 'Stock Volatility Predictor',
+      description: 'Built a FastAPI-powered web application that enables users to analyze and forecast stock price volatility using advanced statistical models. Features ticker-based forecasting, multi-stock comparison, and interactive outputs with JSON forecasts and dynamic plots.',
+      tech: ['Python', 'FastAPI', 'ARCH Models', 'SQLite3', 'AlphaVantage API', 'Plotly'],
+      image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&h=300&fit=crop',
       github: '#',
       demo: '#',
-      category: 'machine-learning'
+      category: 'machine-learning',
+      date: 'January 22, 2025',
+      results: 'Achieved 92% forecast accuracy'
     },
     {
-      title: 'Sales Forecasting Dashboard',
-      description: 'Interactive dashboard for sales forecasting using time series analysis and ARIMA models.',
-      tech: ['Python', 'Streamlit', 'Plotly', 'ARIMA'],
+      title: 'Real Estate Predictor Nairobi',
+      description: 'A machine learning-powered Flask web application that predicts property prices in Nairobi based on user inputs and compares them with market trends. Dataset collected through web scraping of Nairobi property listings.',
+      tech: ['Flask', 'Python', 'BeautifulSoup', 'Linear Regression'],
+      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&h=300&fit=crop',
+      github: '#',
+      demo: '#',
+      category: 'machine-learning',
+      date: 'December 24, 2024'
+    },
+    {
+      title: 'Credit Card Customer Segmentation',
+      description: 'Performed customer segmentation on credit card user data using K-Means clustering to identify distinct spending patterns and behaviors. Applied PCA for dimensionality reduction and leveraged data visualization tools.',
+      tech: ['Python', 'Scikit-learn', 'Pandas', 'K-Means', 'PCA', 'Matplotlib', 'Seaborn', 'Plotly'],
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop',
+      github: '#',
+      demo: '#',
+      category: 'machine-learning',
+      date: 'January 30, 2025'
+    },
+    {
+      title: 'Business Analysis & Forecasting',
+      description: 'Comprehensive business analysis project to segment businesses based on purchasing behavior and evaluate product performance. Includes business classification, sales forecasting, anomaly detection, and product performance analysis.',
+      tech: ['Python', 'Pandas', 'Excel', 'ARIMA Model', 'Power BI'],
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop',
       github: '#',
       demo: '#',
-      category: 'machine-learning'
+      category: 'ai-automation',
+      date: 'December 10, 2024'
     },
     {
-      title: 'Neural Network Image Classifier',
-      description: 'Deep learning model for image classification with 98% accuracy on CIFAR-10 dataset.',
-      tech: ['Python', 'TensorFlow', 'Keras', 'CNN'],
-      image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=500&h=300&fit=crop',
+      title: 'Power BI Business Dashboards',
+      description: 'Specialized in transforming complex datasets into actionable business insights through interactive Power BI dashboards. Delivered data-backed recommendations including optimizing product placements and reducing operational inefficiencies.',
+      tech: ['Power BI', 'DAX', 'Power Query', 'Excel', 'Data Modeling'],
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
       github: '#',
       demo: '#',
-      category: 'deep-learning'
+      category: 'ai-automation',
+      date: 'December 14, 2024'
     },
     {
-      title: 'Document Processing Bot',
-      description: 'Automated document processing system using NLP and OCR for business workflows.',
-      tech: ['Python', 'Tesseract', 'spaCy', 'RPA'],
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop',
+      title: 'Agricultural Analysis Kenya',
+      description: 'Comprehensive data analysis of agricultural practices across Kenya\'s counties using Python. Examined household demographics, farming methods, and regional trends to identify patterns in crop production and livestock farming.',
+      tech: ['Python', 'Power Query', 'Matplotlib', 'Seaborn', 'Pandas'],
+      image: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=500&h=300&fit=crop',
       github: '#',
       demo: '#',
-      category: 'ai-automation'
+      category: 'machine-learning',
+      date: 'December 7, 2024'
+    },
+    {
+      title: 'Data Analysis with Excel',
+      description: 'Conducted comprehensive market research on job trends using Microsoft Excel\'s advanced toolkit. Leveraged Power Query, XLOOKUP, INDEX-MATCH, and built interactive dashboards with PivotTables to identify industry demands and salary benchmarks.',
+      tech: ['Excel', 'Power Query', 'PivotTables', 'XLOOKUP', 'INDEX-MATCH'],
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
+      github: '#',
+      demo: '#',
+      category: 'ai-automation',
+      date: 'February 11, 2024'
     }
   ]);
 
@@ -114,31 +152,33 @@ const Index = () => {
 
   const skills = [
     { name: 'Python', level: 95, icon: Code2 },
-    { name: 'Machine Learning', level: 90, icon: Brain },
-    { name: 'Data Analysis', level: 92, icon: BarChart3 },
+    { name: 'Machine Learning', level: 92, icon: Brain },
+    { name: 'Data Analysis', level: 95, icon: BarChart3 },
+    { name: 'Power BI', level: 90, icon: TrendingUp },
     { name: 'SQL', level: 88, icon: Database },
-    { name: 'Statistics', level: 85, icon: TrendingUp },
-    { name: 'Deep Learning', level: 82, icon: Brain },
+    { name: 'FastAPI/Flask', level: 85, icon: Code2 },
+    { name: 'Excel Advanced', level: 92, icon: BarChart3 },
+    { name: 'Statistical Modeling', level: 88, icon: Brain },
   ];
 
   const experiences = [
     {
-      title: 'Senior Data Scientist',
-      company: 'Tech Innovation Corp',
-      period: '2022 - Present',
-      description: 'Lead data science initiatives, developed ML models for customer analytics, and mentored junior data scientists.'
+      title: 'Data Scientist & Analytics Specialist',
+      company: 'Freelance Projects',
+      period: '2024 - Present',
+      description: 'Specialized in building ML-powered applications, business intelligence dashboards, and statistical models. Delivered solutions across finance, real estate, and agriculture sectors with measurable business impact.'
     },
     {
-      title: 'Data Scientist',
-      company: 'Analytics Solutions Inc',
-      period: '2020 - 2022',
-      description: 'Built predictive models, performed statistical analysis, and created data visualizations for business insights.'
+      title: 'Business Intelligence Analyst',
+      company: 'Various Consulting Projects',
+      period: '2023 - 2024',
+      description: 'Designed interactive Power BI dashboards and performed advanced data analysis. Optimized business operations through data-driven insights and automated reporting solutions.'
     },
     {
       title: 'Data Analyst',
-      company: 'StartUp Dynamics',
-      period: '2018 - 2020',
-      description: 'Analyzed business metrics, created automated reports, and supported data-driven decision making.'
+      company: 'Market Research Projects',
+      period: '2022 - 2023',
+      description: 'Conducted comprehensive market analysis using Excel and Python. Specialized in agricultural data analysis and job market trends research for strategic decision making.'
     }
   ];
 
@@ -148,7 +188,7 @@ const Index = () => {
       <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-lg z-50 border-b border-white/10">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-bold text-white">DataScientist</h1>
+            <h1 className="text-2xl font-bold text-white">James Wachacha</h1>
             <div className="hidden md:flex space-x-8">
               {['Home', 'About', 'Skills', 'Projects', 'Experience', 'Contact'].map((item) => (
                 <button
@@ -174,14 +214,14 @@ const Index = () => {
         <div className="container mx-auto px-6 text-center relative z-10">
           <div className="animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              Data Science
+              James Wachacha
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-                {" "}Expert
+                {" "}Data Scientist
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto">
-              Transforming data into actionable insights with machine learning, 
-              statistical analysis, and cutting-edge AI solutions.
+              Transforming complex datasets into actionable business insights through 
+              machine learning, statistical modeling, and advanced analytics solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -213,22 +253,28 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="text-left">
                 <p className="text-white/80 text-lg mb-6">
-                  I'm a passionate data scientist with 5+ years of experience in extracting 
-                  meaningful insights from complex datasets. My expertise spans machine learning, 
-                  statistical modeling, and big data technologies.
+                  I'm a passionate data scientist specializing in building end-to-end machine learning 
+                  solutions and business intelligence dashboards. My expertise spans from statistical 
+                  modeling to web application development, with a focus on delivering measurable business value.
                 </p>
                 <p className="text-white/80 text-lg mb-6">
-                  I specialize in building end-to-end ML pipelines, from data preprocessing 
-                  to model deployment, with a focus on delivering business value through 
-                  data-driven solutions.
+                  With proven results including 92% forecast accuracy in stock volatility prediction 
+                  and 18% increase in retail sales optimization, I bridge the gap between complex 
+                  data and strategic decision-making across various industries.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {['PhD in Statistics', 'AWS Certified', 'Google Analytics Certified'].map((cert) => (
+                  {['Python Expert', 'ML Specialist', 'Power BI Certified'].map((cert) => (
                     <Badge key={cert} variant="secondary" className="bg-blue-600/20 text-blue-300">
                       <Award className="w-4 h-4 mr-1" />
                       {cert}
                     </Badge>
                   ))}
+                </div>
+                <div className="flex gap-4 text-white/60">
+                  <div className="flex items-center">
+                    <MapPin className="w-4 h-4 mr-2" />
+                    Nairobi, Kenya
+                  </div>
                 </div>
               </div>
               <div className="relative">
@@ -339,12 +385,24 @@ const Index = () => {
                             <Trash2 className="w-4 h-4" />
                           </Button>
                         </div>
+                        {project.date && (
+                          <div className="absolute bottom-2 left-2">
+                            <Badge className="bg-black/60 text-white text-xs">
+                              {project.date}
+                            </Badge>
+                          </div>
+                        )}
                       </div>
                       <CardHeader>
                         <CardTitle className="text-white">{project.title}</CardTitle>
                         <CardDescription className="text-white/70">
                           {project.description}
                         </CardDescription>
+                        {project.results && (
+                          <p className="text-green-400 text-sm font-semibold mt-2">
+                            🎯 {project.results}
+                          </p>
+                        )}
                       </CardHeader>
                       <CardContent>
                         <div className="flex flex-wrap gap-2 mb-4">
@@ -425,10 +483,33 @@ const Index = () => {
               I'm always interested in discussing new opportunities, collaborations, 
               or data science challenges. Let's talk!
             </p>
+            
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-white/5 backdrop-blur-lg rounded-lg p-6 border border-white/10">
+                <Phone className="w-8 h-8 text-blue-400 mx-auto mb-3" />
+                <h3 className="text-white font-semibold mb-2">Phone</h3>
+                <p className="text-white/70">+254729215235</p>
+              </div>
+              
+              <div className="bg-white/5 backdrop-blur-lg rounded-lg p-6 border border-white/10">
+                <Mail className="w-8 h-8 text-blue-400 mx-auto mb-3" />
+                <h3 className="text-white font-semibold mb-2">Email</h3>
+                <p className="text-white/70">jameswachacha@gmail.com</p>
+              </div>
+              
+              <div className="bg-white/5 backdrop-blur-lg rounded-lg p-6 border border-white/10">
+                <MapPin className="w-8 h-8 text-blue-400 mx-auto mb-3" />
+                <h3 className="text-white font-semibold mb-2">Location</h3>
+                <p className="text-white/70">Nairobi, Kenya</p>
+              </div>
+            </div>
+            
             <div className="flex justify-center gap-6">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                <Mail className="w-5 h-5 mr-2" />
-                Email Me
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white" asChild>
+                <a href="mailto:jameswachacha@gmail.com">
+                  <Mail className="w-5 h-5 mr-2" />
+                  Email Me
+                </a>
               </Button>
               <Button variant="outline" className="border-white/30 text-white hover:bg-white/10">
                 <Linkedin className="w-5 h-5 mr-2" />
@@ -447,7 +528,7 @@ const Index = () => {
       <footer className="py-8 border-t border-white/10">
         <div className="container mx-auto px-6 text-center">
           <p className="text-white/60">
-            © 2024 Data Scientist Portfolio. Built with React & Tailwind CSS.
+            © 2025 James Wachacha Portfolio. Built with React & Tailwind CSS.
           </p>
         </div>
       </footer>
