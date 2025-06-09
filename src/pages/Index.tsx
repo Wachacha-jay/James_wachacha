@@ -511,13 +511,17 @@ const Index = () => {
                   Email Me
                 </a>
               </Button>
-              <Button variant="outline" className="border-white/30 text-white hover:bg-white/10">
-                <Linkedin className="w-5 h-5 mr-2" />
-                LinkedIn
+              <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 bg-transparent" asChild>
+                <a href="https://www.linkedin.com/in/james-wachacha" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="w-5 h-5 mr-2" />
+                  LinkedIn
+                </a>
               </Button>
-              <Button variant="outline" className="border-white/30 text-white hover:bg-white/10">
-                <Github className="w-5 h-5 mr-2" />
-                GitHub
+              <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 bg-transparent" asChild>
+                <a href="https://github.com/wachacha-jay" target="_blank" rel="noopener noreferrer">
+                  <Github className="w-5 h-5 mr-2" />
+                  GitHub
+                </a>
               </Button>
             </div>
           </div>
