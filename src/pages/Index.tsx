@@ -478,7 +478,7 @@ const Index = () => {
       <section id="contact" className="py-20 bg-black/20">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-white text-center mb-12">Let's Connect</h2>
-          <div className="max-w-2xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center">
             <p className="text-white/80 text-lg mb-8">
               I'm always interested in discussing new opportunities, collaborations, 
               or data science challenges. Let's talk!
@@ -488,13 +488,13 @@ const Index = () => {
               <div className="bg-white/5 backdrop-blur-lg rounded-lg p-6 border border-white/10">
                 <Phone className="w-8 h-8 text-blue-400 mx-auto mb-3" />
                 <h3 className="text-white font-semibold mb-2">Phone</h3>
-                <p className="text-white/70">+254729215235</p>
+                <p className="text-white/70 break-words">+254729215235</p>
               </div>
               
               <div className="bg-white/5 backdrop-blur-lg rounded-lg p-6 border border-white/10">
                 <Mail className="w-8 h-8 text-blue-400 mx-auto mb-3" />
                 <h3 className="text-white font-semibold mb-2">Email</h3>
-                <p className="text-white/70">jameswachacha@gmail.com</p>
+                <p className="text-white/70 break-all text-sm">jameswachacha@gmail.com</p>
               </div>
               
               <div className="bg-white/5 backdrop-blur-lg rounded-lg p-6 border border-white/10">
@@ -504,7 +504,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="flex justify-center gap-6">
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button className="bg-blue-600 hover:bg-blue-700 text-white" asChild>
                 <a href="mailto:jameswachacha@gmail.com">
                   <Mail className="w-5 h-5 mr-2" />
