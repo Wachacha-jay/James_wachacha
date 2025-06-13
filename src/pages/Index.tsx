@@ -83,7 +83,7 @@ const Index = () => {
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop',
       github: '#',
       demo: '#',
-      category: 'ai-automation',
+      category: 'machine-learning',
       date: 'December 10, 2024'
     },
     {
@@ -93,7 +93,7 @@ const Index = () => {
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
       github: '#',
       demo: '#',
-      category: 'ai-automation',
+      category: 'machine-learning',
       date: 'December 14, 2024'
     },
     {
@@ -113,8 +113,19 @@ const Index = () => {
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
       github: '#',
       demo: '#',
-      category: 'ai-automation',
+      category: 'machine-learning',
       date: 'February 11, 2024'
+    },
+    {
+      title: 'Literature Synthesis & Gap Identifier Agent',
+      description: 'Built an intelligent agentic system for automated literature review and research gap identification focused on Non-Communicable Diseases (NCDs) in Kenya. The system automatically scrapes research papers from arXiv, processes academic literature using advanced NLP, and identifies knowledge gaps in NCD research to guide future studies.',
+      tech: ['Python', 'LangChain', 'LangGraph', 'Groq LLM', 'arXiv API', 'Scrapy', 'NLP', 'Research Analytics'],
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=300&fit=crop',
+      github: '#',
+      demo: '#',
+      category: 'ai-automation',
+      date: 'February 10, 2025',
+      results: 'Automated analysis of 500+ research papers, identified 15 key research gaps'
     }
   ]);
 
