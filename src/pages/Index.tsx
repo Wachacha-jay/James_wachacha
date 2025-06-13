@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { ChevronDown, Github, Linkedin, Mail, ExternalLink, Database, BarChart3, Brain, Code2, TrendingUp, Award, Plus, Edit, Trash2, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -24,6 +23,28 @@ const Index = () => {
   const [showAddProject, setShowAddProject] = useState(false);
   const [activeTab, setActiveTab] = useState<'machine-learning' | 'deep-learning' | 'ai-automation'>('machine-learning');
   const [projects, setProjects] = useState<Project[]>([
+    {
+      title: 'Crop Disease Classification',
+      description: 'Developed a deep learning model using ResNet architecture to automatically classify plant diseases from leaf images. Implemented comprehensive data pipeline including image extraction, preprocessing, and augmentation. Achieved high accuracy in identifying various crop diseases to help farmers make informed decisions about treatment and prevention.',
+      tech: ['Python', 'PyTorch', 'ResNet', 'OpenCV', 'PIL', 'Data Augmentation', 'Transfer Learning'],
+      image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&h=300&fit=crop',
+      github: '#',
+      demo: '#',
+      category: 'deep-learning',
+      date: 'February 5, 2025',
+      results: 'Achieved 94% classification accuracy across 10 disease categories'
+    },
+    {
+      title: 'Sentiment Analysis & Text Classification',
+      description: 'Built an advanced NLP system for analyzing customer feedback and social media sentiment. Implemented text preprocessing, feature extraction using TF-IDF and word embeddings, and trained multiple classification models. Applied named entity recognition and topic modeling to extract actionable insights from unstructured text data.',
+      tech: ['Python', 'NLTK', 'spaCy', 'Transformers', 'scikit-learn', 'BERT', 'TF-IDF', 'Word2Vec'],
+      image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=500&h=300&fit=crop',
+      github: '#',
+      demo: '#',
+      category: 'deep-learning',
+      date: 'January 28, 2025',
+      results: 'Processing 10K+ texts with 91% sentiment accuracy'
+    },
     {
       title: 'Stock Volatility Predictor',
       description: 'Built a FastAPI-powered web application that enables users to analyze and forecast stock price volatility using advanced statistical models. Features ticker-based forecasting, multi-stock comparison, and interactive outputs with JSON forecasts and dynamic plots.',
