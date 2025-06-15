@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Plus, Github, ExternalLink, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -107,6 +106,7 @@ const ProjectsSection = ({ projects, onAddProject, onDeleteProject }: ProjectsSe
                         src={project.image || 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=500&h=300&fit=crop'} 
                         alt={project.title}
                         className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+                        loading="lazy"
                       />
                       <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
                         <Button
