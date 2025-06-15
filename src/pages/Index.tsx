@@ -19,22 +19,17 @@ interface Project {
   results?: string;
 }
 
-const prependBaseUrl = (relativePath: string) => {
-  // Do not double-prepend BASE_URL if image is already remote or placeholder
+const cleanImagePath = (relativePath: string) => {
+  // Always use relative path: /images/projects/xyz.jpg
   if (
     !relativePath ||
     relativePath.startsWith('http://') ||
-    relativePath.startsWith('https://') ||
-    relativePath.startsWith(import.meta.env.BASE_URL)
+    relativePath.startsWith('https://')
   ) {
     return relativePath;
   }
-  // Ensure BASE_URL ends with "/" and relative path doesn't start with "/"
-  const base = import.meta.env.BASE_URL.endsWith('/')
-    ? import.meta.env.BASE_URL
-    : import.meta.env.BASE_URL + '/';
-  const rel = relativePath.startsWith('/') ? relativePath.slice(1) : relativePath;
-  return base + rel;
+  // Remove any accidental double slashes
+  return relativePath.replace(/\/{2,}/g, '/');
 };
 
 const baseProjects: Project[] = [
@@ -156,10 +151,14 @@ const baseProjects: Project[] = [
 ];
 
 const processImages = (projects: Project[]) =>
-  projects.map((p) => ({
-    ...p,
-    image: prependBaseUrl(p.image),
-  }));
+  projects.map((p) => {
+    // For debug, log each image path that will be sent to <img>
+    console.log('[DEBUG] Project:', p.title, '| Image:', cleanImagePath(p.image));
+    return {
+      ...p,
+      image: cleanImagePath(p.image)
+    }
+  });
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -192,7 +191,7 @@ const Index = () => {
     const projectWithCategory: Project = {
       ...newProject,
       category: 'machine-learning', // Will be set by ProjectsSection
-      image: prependBaseUrl(newProject.image),
+      image: cleanImagePath(newProject.image),
     };
     setProjects((prevProjects) => [...prevProjects, projectWithCategory]);
   };
