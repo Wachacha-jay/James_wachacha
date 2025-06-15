@@ -1,5 +1,5 @@
 
-import { Database, BarChart3, Brain, Code2, TrendingUp, Eye, MessageCircleCode } from 'lucide-react';
+import { Database, BarChart3, Brain, Code2, TrendingUp, Eye, MessageCircleCode, Cloud } from 'lucide-react';
 
 const SkillsSection = () => {
   const skills = [
@@ -15,7 +15,11 @@ const SkillsSection = () => {
     },
     { name: 'Data Analysis', level: 95, icon: BarChart3 },
     { name: 'Statistical Modeling', level: 88, icon: Brain },
-    // SQL, Excel, Power BI are now combined above and not repeated separately
+    // Cloud technologies and ecosystem tools
+    { name: 'AWS', level: 75, icon: Cloud },
+    { name: 'Azure', level: 70, icon: Cloud },
+    { name: 'Google Cloud', level: 68, icon: Cloud },
+    { name: 'Hugging Face', level: 78, icon: Brain },
   ];
 
   return (
@@ -47,4 +51,3 @@ const SkillsSection = () => {
 };
 
 export default SkillsSection;
-
