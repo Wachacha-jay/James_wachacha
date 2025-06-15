@@ -27,6 +27,8 @@ interface ProjectsSectionProps {
 const ProjectsSection = ({ projects, onAddProject, onDeleteProject }: ProjectsSectionProps) => {
   const [showAddProject, setShowAddProject] = useState(false);
   const [activeTab, setActiveTab] = useState<'machine-learning' | 'deep-learning' | 'ai-automation'>('machine-learning');
+  const fallbackImage =
+    "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=500&h=300&fit=crop";
 
   const handleAddProject = (newProject: Omit<Project, 'category'>) => {
     onAddProject(newProject);
@@ -102,11 +104,17 @@ const ProjectsSection = ({ projects, onAddProject, onDeleteProject }: ProjectsSe
                 {getProjectsByCategory(category).map((project, index) => (
                   <Card key={`${category}-${index}`} className="bg-white/5 backdrop-blur-lg border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105 group">
                     <div className="relative overflow-hidden rounded-t-lg">
-                      <img 
-                        src={project.image || 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=500&h=300&fit=crop'} 
+                      <img
+                        src={project.image || fallbackImage}
                         alt={project.title}
                         className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
                         loading="lazy"
+                        onError={e => {
+                          // @ts-ignore
+                          e.target.onerror = null;
+                          // @ts-ignore
+                          e.target.src = fallbackImage;
+                        }}
                       />
                       <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
                         <Button
