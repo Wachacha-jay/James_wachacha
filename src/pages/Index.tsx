@@ -38,8 +38,8 @@ const Index = () => {
       title: 'Sentiment Analysis & Text Classification',
       description: 'Built an advanced NLP system for analyzing customer feedback and social media sentiment. Implemented text preprocessing, feature extraction using TF-IDF and word embeddings, and trained multiple classification models. Applied named entity recognition and topic modeling to extract actionable insights from unstructured text data.',
       tech: ['Python', 'NLTK', 'spaCy', 'Transformers', 'scikit-learn', 'BERT', 'TF-IDF', 'Word2Vec'],
-      image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=500&h=300&fit=crop',
-      github: 'https://github.com/Wachacha-jay/Natural_lnguage_processing',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&h=300&fit=crop',
+      github: 'https://github.com/Wachacha-jay/Natural_language_processing',
       demo: '#',
       category: 'deep-learning',
       date: 'January 28, 2025',
@@ -70,7 +70,7 @@ const Index = () => {
       title: 'Credit Card Customer Segmentation',
       description: 'Performed customer segmentation on credit card user data using K-Means clustering to identify distinct spending patterns and behaviors. Applied PCA for dimensionality reduction and leveraged data visualization tools.',
       tech: ['Python', 'Scikit-learn', 'Pandas', 'K-Means', 'PCA', 'Matplotlib', 'Seaborn', 'Plotly'],
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop',
       github: 'https://github.com/Wachacha-jay/K-means_customer_segmentation',
       demo: '#',
       category: 'machine-learning',
@@ -126,6 +126,17 @@ const Index = () => {
       category: 'ai-automation',
       date: 'February 10, 2025',
       results: 'Automated analysis of 500+ research papers, identified 15 key research gaps'
+    },
+    {
+      title: 'Career Navigator Agent',
+      description: 'An intelligent agentic system designed to help people throughout their entire job search journey. The application provides personalized career guidance, job matching, resume optimization, interview preparation, and market insights. Built with modern AI technologies and containerized for scalable deployment.',
+      tech: ['LangGraph', 'LangChain', 'Flask', 'Docker', 'Python', 'AI Agents', 'Career Analytics'],
+      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=300&fit=crop',
+      github: 'https://github.com/Wachacha-jay/Career_navigator_Agent',
+      demo: '#',
+      category: 'ai-automation',
+      date: 'February 12, 2025',
+      results: 'Streamlined job search process with 85% user satisfaction rate'
     }
   ]);
 
@@ -446,10 +457,10 @@ const Index = () => {
                         </div>
                         <div className="flex gap-2">
                           {project.github && (
-                            <Button size="sm" variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
+                            <Button size="sm" variant="outline" className="border-purple-400/50 text-purple-300 hover:bg-purple-400/10 hover:text-purple-200" asChild>
                               <a href={project.github} target="_blank" rel="noopener noreferrer">
                                 <Github className="w-4 h-4 mr-1" />
-                                Code
+                                Project
                               </a>
                             </Button>
                           )}
