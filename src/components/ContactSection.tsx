@@ -13,6 +13,16 @@ const ContactSection = () => {
             or data science challenges. Let's talk!
           </p>
           
+          {/* Prominent Get In Touch Button */}
+          <div className="mb-12">
+            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg px-12 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" asChild>
+              <a href="mailto:jameswachacha@gmail.com">
+                <Mail className="w-6 h-6 mr-3" />
+                Get In Touch
+              </a>
+            </Button>
+          </div>
+          
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             <div className="bg-white/5 backdrop-blur-lg rounded-lg p-6 border border-white/10">
               <Phone className="w-8 h-8 text-blue-400 mx-auto mb-3" />
