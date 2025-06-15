@@ -1,16 +1,21 @@
 
-import { Database, BarChart3, Brain, Code2, TrendingUp } from 'lucide-react';
+import { Database, BarChart3, Brain, Code2, TrendingUp, Eye, MessageCircleCode } from 'lucide-react';
 
 const SkillsSection = () => {
   const skills = [
     { name: 'Python', level: 95, icon: Code2 },
     { name: 'Machine Learning', level: 92, icon: Brain },
+    { name: 'Computer Vision', level: 89, icon: Eye },
+    { name: 'Natural Language Processing', level: 90, icon: MessageCircleCode },
+    { name: 'PyTorch / TensorFlow', level: 87, icon: Code2 },
+    {
+      name: 'Business Analytics (Excel Advanced, SQL, Power BI)',
+      level: 91,
+      icon: BarChart3
+    },
     { name: 'Data Analysis', level: 95, icon: BarChart3 },
-    { name: 'Power BI', level: 90, icon: TrendingUp },
-    { name: 'SQL', level: 88, icon: Database },
-    { name: 'FastAPI/Flask', level: 85, icon: Code2 },
-    { name: 'Excel Advanced', level: 92, icon: BarChart3 },
     { name: 'Statistical Modeling', level: 88, icon: Brain },
+    // SQL, Excel, Power BI are now combined above and not repeated separately
   ];
 
   return (
@@ -19,7 +24,7 @@ const SkillsSection = () => {
         <h2 className="text-4xl font-bold text-white text-center mb-12">Technical Skills</h2>
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
-            {skills.map((skill, index) => (
+            {skills.map((skill) => (
               <div key={skill.name} className="bg-white/5 backdrop-blur-lg rounded-lg p-6 border border-white/10">
                 <div className="flex items-center mb-4">
                   <skill.icon className="w-6 h-6 text-blue-400 mr-3" />
@@ -42,3 +47,4 @@ const SkillsSection = () => {
 };
 
 export default SkillsSection;
+
