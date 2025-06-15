@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
@@ -19,8 +20,9 @@ interface Project {
   results?: string;
 }
 
+// Modified to always prepend Vite's BASE_URL in production & dev
 const cleanImagePath = (relativePath: string) => {
-  // Always use relative path: /images/projects/xyz.jpg
+  // Ignore external links
   if (
     !relativePath ||
     relativePath.startsWith('http://') ||
@@ -28,8 +30,13 @@ const cleanImagePath = (relativePath: string) => {
   ) {
     return relativePath;
   }
-  // Remove any accidental double slashes
-  return relativePath.replace(/\/{2,}/g, '/');
+  // Remove any accidental leading/trailing slashes for safety
+  let base = import.meta.env.BASE_URL || '/';
+  if (!base.endsWith('/')) base += '/';
+  // Remove leading slash from the relativePath (if present)
+  let path = relativePath.replace(/^\/+/, '');
+  const finalPath = `${base}${path}`.replace(/\/{2,}/g, '/');
+  return finalPath;
 };
 
 const baseProjects: Project[] = [
@@ -152,11 +159,11 @@ const baseProjects: Project[] = [
 
 const processImages = (projects: Project[]) =>
   projects.map((p) => {
-    // For debug, log each image path that will be sent to <img>
-    console.log('[DEBUG] Project:', p.title, '| Image:', cleanImagePath(p.image));
+    const imgPath = cleanImagePath(p.image);
+    console.log('[DEBUG] Project:', p.title, '| Image:', imgPath);
     return {
       ...p,
-      image: cleanImagePath(p.image)
+      image: imgPath
     }
   });
 
@@ -227,3 +234,4 @@ const Index = () => {
 };
 
 export default Index;
+
