@@ -44,7 +44,7 @@ const baseProjects: Project[] = [
     title: 'Crop Disease Classification',
     description: 'Developed a deep learning model using ResNet architecture to automatically classify plant diseases from leaf images. Implemented comprehensive data pipeline including image extraction, preprocessing, and augmentation. Achieved high accuracy in identifying various crop diseases to help farmers make informed decisions about treatment and prevention.',
     tech: ['Python', 'PyTorch', 'ResNet', 'OpenCV', 'PIL', 'Data Augmentation', 'Transfer Learning'],
-    image: '/images/projects/machine-learning/crop-disease-classification.jpg',
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80', // forest/crops/fields
     github: 'https://github.com/Wachacha-jay/Computer_vision_Image_classification',
     demo: '#',
     category: 'deep-learning',
@@ -55,7 +55,7 @@ const baseProjects: Project[] = [
     title: 'Sentiment Analysis & Text Classification',
     description: 'Built an advanced NLP system for analyzing customer feedback and social media sentiment. Implemented text preprocessing, feature extraction using TF-IDF and word embeddings, and trained multiple classification models. Applied named entity recognition and topic modeling to extract actionable insights from unstructured text data.',
     tech: ['Python', 'NLTK', 'spaCy', 'Transformers', 'scikit-learn', 'BERT', 'TF-IDF', 'Word2Vec'],
-    image: '/images/projects/deep-learning/sentiment-analysis.jpg',
+    image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&q=80', // code screen
     github: 'https://github.com/Wachacha-jay/Natural_language_processing',
     demo: '#',
     category: 'deep-learning',
@@ -66,7 +66,7 @@ const baseProjects: Project[] = [
     title: 'Stock Volatility Predictor',
     description: 'Built a FastAPI-powered web application that enables users to analyze and forecast stock price volatility using advanced statistical models. Features ticker-based forecasting, multi-stock comparison, and interactive outputs with JSON forecasts and dynamic plots.',
     tech: ['Python', 'FastAPI', 'ARCH Models', 'SQLite3', 'AlphaVantage API', 'Plotly'],
-    image: '/images/projects/machine-learning/stock-volatility.jpg',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80', // circuit board/techy
     github: 'https://github.com/Wachacha-jay/Stock_volatility',
     demo: '#',
     category: 'machine-learning',
@@ -77,7 +77,7 @@ const baseProjects: Project[] = [
     title: 'Real Estate Predictor Nairobi',
     description: 'A machine learning-powered Flask web application that predicts property prices in Nairobi based on user inputs and compares them with market trends. Dataset collected through web scraping of Nairobi property listings.',
     tech: ['Flask', 'Python', 'BeautifulSoup', 'Linear Regression'],
-    image: '/images/projects/machine-learning/real-estate-predictor.jpg',
+    image: 'https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?w=800&q=80', // building/architecture
     github: 'https://github.com/Wachacha-jay/Real-Estate-price-predictor',
     demo: '#',
     category: 'machine-learning',
@@ -87,7 +87,7 @@ const baseProjects: Project[] = [
     title: 'Credit Card Customer Segmentation',
     description: 'Performed customer segmentation on credit card user data using K-Means clustering to identify distinct spending patterns and behaviors. Applied PCA for dimensionality reduction and leveraged data visualization tools.',
     tech: ['Python', 'Scikit-learn', 'Pandas', 'K-Means', 'PCA', 'Matplotlib', 'Seaborn', 'Plotly'],
-    image: '/images/projects/machine-learning/customer-segmentation.jpg',
+    image: 'https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=800&q=80', // abstract/structure
     github: 'https://github.com/Wachacha-jay/K-means_customer_segmentation',
     demo: '#',
     category: 'machine-learning',
@@ -97,7 +97,7 @@ const baseProjects: Project[] = [
     title: 'Business Analysis & Forecasting',
     description: 'Comprehensive business analysis project to segment businesses based on purchasing behavior and evaluate product performance. Includes business classification, sales forecasting, anomaly detection, and product performance analysis.',
     tech: ['Python', 'Pandas', 'Excel', 'ARIMA Model', 'Power BI'],
-    image: '/images/projects/machine-learning/business-analysis.jpg',
+    image: 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=800&q=80', // river/flow/analysis
     github: 'https://github.com/Wachacha-jay/Market_Analysis',
     demo: '#',
     category: 'machine-learning',
@@ -107,7 +107,7 @@ const baseProjects: Project[] = [
     title: 'Power BI Business Dashboards',
     description: 'Specialized in transforming complex datasets into actionable business insights through interactive Power BI dashboards. Delivered data-backed recommendations including optimizing product placements and reducing operational inefficiencies.',
     tech: ['Power BI', 'DAX', 'Power Query', 'Excel', 'Data Modeling'],
-    image: '/images/projects/machine-learning/power-bi-dashboards.jpg',
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80', // robot/AI dash
     github: 'https://github.com/Wachacha-jay/powerBI_Projects',
     demo: '#',
     category: 'machine-learning',
@@ -117,7 +117,7 @@ const baseProjects: Project[] = [
     title: 'Agricultural Analysis Kenya',
     description: 'Comprehensive data analysis of agricultural practices across Kenya\'s counties using Python. Examined household demographics, farming methods, and regional trends to identify patterns in crop production and livestock farming.',
     tech: ['Python', 'Power Query', 'Matplotlib', 'Seaborn', 'Pandas'],
-    image: '/images/projects/machine-learning/agricultural-analysis.jpg',
+    image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80', // bird's eye view, green fields
     github: 'https://github.com/Wachacha-jay/kilimo',
     demo: '#',
     category: 'machine-learning',
@@ -127,7 +127,7 @@ const baseProjects: Project[] = [
     title: 'Data Analysis with Excel',
     description: 'Conducted comprehensive market research on job trends using Microsoft Excel\'s advanced toolkit. Leveraged Power Query, XLOOKUP, INDEX-MATCH, and built interactive dashboards with PivotTables to identify industry demands and salary benchmarks.',
     tech: ['Excel', 'Power Query', 'PivotTables', 'XLOOKUP', 'INDEX-MATCH'],
-    image: '/images/projects/machine-learning/excel-analysis.jpg',
+    image: 'https://images.unsplash.com/photo-1493397212122-2b85dda8106b?w=800&q=80', // wavy lines/building/charts
     github: 'https://github.com/Wachacha-jay/Excel-data-analytics',
     demo: '#',
     category: 'machine-learning',
@@ -137,7 +137,7 @@ const baseProjects: Project[] = [
     title: 'Literature Synthesis & Gap Identifier Agent',
     description: 'Built an intelligent agentic system for automated literature review and research gap identification focused on Non-Communicable Diseases (NCDs) in Kenya. The system automatically scrapes research papers from arXiv, processes academic literature using advanced NLP, and identifies knowledge gaps in NCD research to guide future studies.',
     tech: ['Python', 'LangChain', 'LangGraph', 'Groq LLM', 'arXiv API', 'Scrapy', 'NLP', 'Research Analytics'],
-    image: '/images/projects/ai-automation/literature-synthesis-agent.jpg',
+    image: 'https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&q=80', // abstract, literature, data
     github: 'https://github.com/Wachacha-jay/NCD_Gap_finder_Agent',
     demo: '#',
     category: 'ai-automation',
@@ -148,7 +148,7 @@ const baseProjects: Project[] = [
     title: 'Career Navigator Agent',
     description: 'An intelligent agentic system designed to help people throughout their entire job search journey. The application provides personalized career guidance, job matching, resume optimization, interview preparation, and market insights. Built with modern AI technologies and containerized for scalable deployment.',
     tech: ['LangGraph', 'LangChain', 'Flask', 'Docker', 'Python', 'AI Agents', 'Career Analytics'],
-    image: '/images/projects/ai-automation/career-navigator-agent.jpg',
+    image: 'https://images.unsplash.com/photo-1460574283810-2aab119d8511?w=800&q=80', // abstract, guidance, building
     github: 'https://github.com/Wachacha-jay/Career_navigator_Agent',
     demo: '#',
     category: 'ai-automation',
