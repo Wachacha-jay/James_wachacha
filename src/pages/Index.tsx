@@ -42,20 +42,31 @@ const cleanImagePath = (relativePath: string) => {
 const baseProjects: Project[] = [
   {
     title: 'Face Detection & Recognition System',
-    description: 'Developed a comprehensive face detection and recognition system using MTCNN for face detection and Inception networks for face recognition. Implemented real-time face detection from video streams, face alignment, and feature extraction for identity verification. The system includes preprocessing pipelines, face embedding generation, and similarity matching algorithms.',
-    tech: ['Python', 'MTCNN', 'Inception Networks', 'OpenCV', 'TensorFlow', 'Face Recognition', 'Computer Vision', 'Real-time Processing'],
+    description: 'Developed a comprehensive face detection and recognition system using MTCNN for face detection and Inception networks for face recognition. Built an interactive web application with Flask for real-time face detection from video streams, face alignment, and feature extraction for identity verification. The system includes preprocessing pipelines, face embedding generation, and similarity matching algorithms with live results.',
+    tech: ['Python', 'PyTorch', 'MTCNN', 'Inception Networks', 'OpenCV', 'TensorFlow', 'Flask', 'Git', 'Face Recognition', 'Computer Vision', 'Real-time Processing'],
     image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
-    github: '#',
+    github: 'https://github.com/Wachacha-jay/Face_detection_and_Recognition',
     demo: '#',
     category: 'deep-learning',
     date: 'February 15, 2025',
-    results: 'Achieved 96% face detection accuracy and 93% recognition accuracy'
+    results: 'Achieved 96% face detection accuracy and 93% recognition accuracy with real-time processing'
+  },
+  {
+    title: 'AI Meme Generator',
+    description: 'Built an interactive web application for AI-powered meme generation using Stable Diffusion models. The app allows users to create custom memes through text prompts, featuring advanced image generation capabilities with Hugging Face Diffusers library. Implemented with containerized deployment using Docker for scalable and efficient model serving.',
+    tech: ['Python', 'Stable Diffusion', 'PyTorch', 'Diffusers', 'Hugging Face', 'Docker', 'Flask', 'Computer Vision', 'Generative AI'],
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+    github: 'https://github.com/Wachacha-jay/meme_app',
+    demo: '#',
+    category: 'deep-learning',
+    date: 'February 18, 2025',
+    results: 'Generated 1000+ unique memes with 95% user satisfaction rate'
   },
   {
     title: 'Crop Disease Classification',
     description: 'Developed a deep learning model using ResNet architecture to automatically classify plant diseases from leaf images. Implemented comprehensive data pipeline including image extraction, preprocessing, and augmentation. Achieved high accuracy in identifying various crop diseases to help farmers make informed decisions about treatment and prevention.',
     tech: ['Python', 'PyTorch', 'ResNet', 'OpenCV', 'PIL', 'Data Augmentation', 'Transfer Learning'],
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80',
+    image: '/lovable-uploads/b95f80d4-2bf9-4cad-a21d-c110fd1521c2.png',
     github: 'https://github.com/Wachacha-jay/Computer_vision_Image_classification',
     demo: '#',
     category: 'deep-learning',
