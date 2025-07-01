@@ -41,10 +41,21 @@ const cleanImagePath = (relativePath: string) => {
 
 const baseProjects: Project[] = [
   {
+    title: 'Face Detection & Recognition System',
+    description: 'Developed a comprehensive face detection and recognition system using MTCNN for face detection and Inception networks for face recognition. Implemented real-time face detection from video streams, face alignment, and feature extraction for identity verification. The system includes preprocessing pipelines, face embedding generation, and similarity matching algorithms.',
+    tech: ['Python', 'MTCNN', 'Inception Networks', 'OpenCV', 'TensorFlow', 'Face Recognition', 'Computer Vision', 'Real-time Processing'],
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
+    github: '#',
+    demo: '#',
+    category: 'deep-learning',
+    date: 'February 15, 2025',
+    results: 'Achieved 96% face detection accuracy and 93% recognition accuracy'
+  },
+  {
     title: 'Crop Disease Classification',
     description: 'Developed a deep learning model using ResNet architecture to automatically classify plant diseases from leaf images. Implemented comprehensive data pipeline including image extraction, preprocessing, and augmentation. Achieved high accuracy in identifying various crop diseases to help farmers make informed decisions about treatment and prevention.',
     tech: ['Python', 'PyTorch', 'ResNet', 'OpenCV', 'PIL', 'Data Augmentation', 'Transfer Learning'],
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80', // forest/crops/fields
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80',
     github: 'https://github.com/Wachacha-jay/Computer_vision_Image_classification',
     demo: '#',
     category: 'deep-learning',
