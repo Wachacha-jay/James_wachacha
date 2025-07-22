@@ -176,6 +176,17 @@ const baseProjects: Project[] = [
     category: 'ai-automation',
     date: 'February 12, 2025',
     results: 'Streamlined job search process with 85% user satisfaction rate'
+  },
+  {
+    title: 'Food Ordering Chatbot',
+    description: 'Built an intelligent food ordering chatbot using Dialogflow for natural language processing and intent recognition. Features a static web interface for user interaction, Python FastAPI backend for handling API requests and business logic, and MySQL database for storing menu items and order tracking. The system provides seamless webhook fulfillment between Dialogflow and the backend.',
+    tech: ['Dialogflow', 'Python', 'FastAPI', 'MySQL', 'Static Web Interface', 'Webhook Integration', 'NLP', 'Chatbot Development'],
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&q=80',
+    github: 'https://github.com/Wachacha-jay/chat_bot-diagflow',
+    demo: '#',
+    category: 'ai-automation',
+    date: 'February 20, 2025',
+    results: 'Automated food ordering with 90% intent recognition accuracy'
   }
 ];
 
