@@ -148,5 +148,16 @@ export const baseProjects: Project[] = [
     category: 'ai-automation',
     date: 'February 20, 2025',
     results: 'Automated food ordering with 90% intent recognition accuracy'
+  },
+  {
+    title: 'Research Agent',
+    description: 'Built an intelligent research tool that automates data collection, analysis, and report generation using advanced AI technologies. Features a Flask web application with Jinja2 templating for user interaction, powered by LangGraph and LangChain for complex AI workflows, and integrated with Google Gemini for natural language processing and content generation.',
+    tech: ['Python', 'Flask', 'LangGraph', 'LangChain', 'Google Gemini', 'Jinja2', 'python-dotenv', 'Generative AI'],
+    image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&q=80',
+    github: 'https://github.com/Wachacha-jay/Reasearch_tool',
+    demo: '#',
+    category: 'ai-automation',
+    date: 'February 22, 2025',
+    results: 'Automated research workflows with intelligent data synthesis'
   }
 ];
