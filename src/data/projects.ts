@@ -2,6 +2,17 @@ import { Project } from '@/types/project';
 
 export const baseProjects: Project[] = [
   {
+    title: 'Credit Score Rating',
+    description: 'A machine learning-based credit score prediction service built with Flask, featuring a RESTful API and web interface for predicting credit scores based on financial and personal data. Includes GitHub Actions with CI/CD pipelines, Docker containerization, and cloud deployment for scalable production use.',
+    tech: ['Python', 'Flask', 'Machine Learning', 'GitHub Actions', 'CI/CD', 'Docker', 'Cloud Deployment', 'RESTful API', 'Data Science'],
+    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80',
+    github: 'https://github.com/Wachacha-jay/Ml_end_to_to_end_project',
+    demo: '#',
+    category: 'machine-learning',
+    date: 'February 23, 2025',
+    results: 'End-to-end ML pipeline with automated deployment and real-time predictions'
+  },
+  {
     title: 'Face Detection & Recognition System',
     description: 'Developed a comprehensive face detection and recognition system using MTCNN for face detection and Inception networks for face recognition. Built an interactive web application with Flask for real-time face detection from video streams, face alignment, and feature extraction for identity verification. The system includes preprocessing pipelines, face embedding generation, and similarity matching algorithms with live results.',
     tech: ['Python', 'PyTorch', 'MTCNN', 'Inception Networks', 'OpenCV', 'TensorFlow', 'Flask', 'Git', 'Face Recognition', 'Computer Vision', 'Real-time Processing'],
