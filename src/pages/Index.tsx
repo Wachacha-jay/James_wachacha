@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
+import ApplicationsSection from '@/components/ApplicationsSection';
 import SkillsSection from '@/components/SkillsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import ExperienceSection from '@/components/ExperienceSection';
@@ -27,7 +28,7 @@ const Index = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
+      const sections = ['home', 'about', 'applications', 'skills', 'projects', 'experience', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -66,6 +67,7 @@ const Index = () => {
       <Navigation activeSection={activeSection} onSectionClick={scrollToSection} />
       <HeroSection onSectionClick={scrollToSection} />
       <AboutSection />
+      <ApplicationsSection />
       <SkillsSection />
       <ProjectsSection 
         projects={projects} 
