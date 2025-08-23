@@ -49,7 +49,7 @@ const ExperienceSection = () => {
     {
       title: 'Data Analyst / Data Scientist',
       company: 'Bulwark Industries - Gypsum and Gypsum Products Manufacturers and Distributors',
-      period: 'Jan 2023 – Dec 2024',
+      period: 'Jan 2023 – Till date',
       location: 'Nairobi, Kenya',
       description: 'Transformed raw operational and market data into strategic insights, driving product optimization and cost efficiency.',
       achievements: [
