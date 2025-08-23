@@ -344,24 +344,6 @@ const ExperienceSection = () => {
           </Card>
         </div>
 
-        {/* Traditional Experience Timeline */}
-        <div className="max-w-4xl mx-auto">
-          <h3 className="text-2xl font-bold text-white text-center mb-8">Career Journey</h3>
-          <div className="space-y-8">
-            {experiences.map((exp, index) => (
-              <div key={index} className="relative pl-8">
-                <div className="absolute left-0 top-0 w-4 h-4 bg-blue-600 rounded-full"></div>
-                <div className="absolute left-2 top-4 w-0.5 h-full bg-blue-600/30"></div>
-                <div className="bg-white/5 backdrop-blur-lg rounded-lg p-6 border border-white/10">
-                  <h3 className="text-xl font-bold text-white">{exp.title}</h3>
-                  <p className="text-blue-400 font-semibold">{exp.company}</p>
-                  <p className="text-white/60 text-sm mb-3">{exp.period}</p>
-                  <p className="text-white/80">{exp.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
