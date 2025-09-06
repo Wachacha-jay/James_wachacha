@@ -170,5 +170,27 @@ export const baseProjects: Project[] = [
     category: 'ai-automation',
     date: 'February 22, 2025',
     results: 'Automated research workflows with intelligent data synthesis'
+  },
+  {
+    title: 'Coder Companion',
+    description: 'An AI-powered coding assistant built with LangGraph that works like a multi-agent development team. Takes natural language requests and transforms them into complete, working projects — file by file — using real developer workflows. Features intelligent code generation, project structuring, and automated development processes.',
+    tech: ['Python', 'LangGraph', 'LangChain', 'Multi-Agent Systems', 'Code Generation', 'AI Automation', 'Developer Tools'],
+    image: '/images/projects/ai-automation/coder-companion.jpg',
+    github: 'https://github.com/Wachacha-jay/code_companion',
+    demo: '#',
+    category: 'ai-automation',
+    date: 'February 25, 2025',
+    results: 'Multi-agent system for automated code generation and project development'
+  },
+  {
+    title: 'RAG Parliamentary Document Analyzer',
+    description: 'A comprehensive Retrieval-Augmented Generation (RAG) application designed for analyzing Kenyan parliamentary documents, specifically Hansard reports and Supplementary Order Papers. Demonstrates a complete RAG pipeline from data ingestion to intelligent query answering with advanced document understanding capabilities.',
+    tech: ['Python', 'LangChain', 'LangGraph', 'Embeddings', 'Vector Database', 'RAG', 'Document Analysis', 'NLP'],
+    image: '/images/projects/ai-automation/rag-parliamentary-analyzer.jpg',
+    github: 'https://github.com/Wachacha-jay/Rag_application',
+    demo: '#',
+    category: 'ai-automation',
+    date: 'February 26, 2025',
+    results: 'Intelligent document analysis with contextual query answering capabilities'
   }
 ];
