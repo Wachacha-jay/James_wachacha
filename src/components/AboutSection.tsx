@@ -11,14 +11,10 @@ const AboutSection = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-left">
               <p className="text-white/80 text-lg mb-6">
-                I'm a passionate data scientist specializing in building end-to-end machine learning 
-                solutions and business intelligence dashboards. My expertise spans from statistical 
-                modeling to web application development, with a focus on delivering measurable business value.
+                I am a Machine Learning Specialist and AI Engineer with a strong passion for data-driven problem solving and building impactful AI solutions. With expertise in Python, TensorFlow, PyTorch, and scikit-learn, I design, develop, and deploy machine learning and deep learning models for real-world applications, ranging from NLP and computer vision to predictive analytics.
               </p>
               <p className="text-white/80 text-lg mb-6">
-                With proven results including 92% forecast accuracy in stock volatility prediction 
-                and 18% increase in retail sales optimization, I bridge the gap between complex 
-                data and strategic decision-making across various industries.
+                I thrive at the intersection of theory and application—taking business challenges, analyzing data, and transforming them into scalable, production-ready AI systems. My experience spans the full pipeline: data preprocessing, feature engineering, model training, evaluation, deployment, and optimization for performance and scalability.
               </p>
               <div className="flex flex-wrap gap-2 mb-6">
                 {['Python Expert', 'ML Specialist', 'Power BI Certified'].map((cert) => (
