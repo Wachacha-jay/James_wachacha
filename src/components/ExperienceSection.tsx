@@ -3,87 +3,153 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ChevronDown, ChevronUp, Download, Mail, Phone, MapPin, Globe } from 'lucide-react';
+import jsPDF from 'jspdf';
 
 const ExperienceSection = () => {
   const [showFullCV, setShowFullCV] = useState(false);
 
   const downloadResume = () => {
-    const resumeContent = `
-JAMES WACHACHA
-Machine Learning Specialist & AI Engineer
-
-CONTACT INFORMATION
-Phone: +254 729215235
-Email: jameswachacha@gmail.com
-Location: Nairobi, Kenya
-Portfolio: https://wachacha-jay.github.io/James_wachacha/
-
-PROFESSIONAL SUMMARY
-${cvPreview.summary}
-
-WORK EXPERIENCE
-
-Senior Data Analyst / Machine Learning Engineer
-Bulwark Industries - Leading Gypsum Products Manufacturer
-January 2023 – Present | Nairobi, Kenya
-
-${fullExperience[0].description}
-
-Key Achievements:
-${fullExperience[0].achievements.map(achievement => `• ${achievement}`).join('\n')}
-
-Software Engineer / Data Analyst
-TZAN Telcom
-September 2022 – September 2023 | Nairobi, Kenya
-
-${fullExperience[1].description}
-
-Key Achievements:
-${fullExperience[1].achievements.map(achievement => `• ${achievement}`).join('\n')}
-
-Data Scientist / Analytics Consultant
-Freelance & Contract Projects
-September 2022 – December 2022 | Remote
-
-${fullExperience[2].description}
-
-Key Achievements:
-${fullExperience[2].achievements.map(achievement => `• ${achievement}`).join('\n')}
-
-FEATURED PROJECTS
-
-${keyProjects.map(project => `
-${project.title}
-${project.description}
-Tools: ${project.tools}
-`).join('\n')}
-
-EDUCATION
-
-${education.map(edu => `
-${edu.degree}
-${edu.institution}
-${edu.year}
-${edu.majors ? `Majors: ${edu.majors}` : ''}
-`).join('\n')}
-
-TECHNICAL SKILLS
-
-Data Analysis & Manipulation: Python (Pandas, NumPy, SciPy), SQL (SQL Server, MySQL, PostgreSQL), Microsoft Excel, Google Sheets
-Business Intelligence & Visualization: Microsoft Power BI, Tableau, Matplotlib, Seaborn, Plotly
-Machine Learning & AI: Statistical Analysis, Regression, Classification, Clustering, TensorFlow, Keras, PyTorch
-Process Improvement & Automation: Data Pipelines, FastAPI, Flask, Automation Scripting, LangChain, LangGraph
-    `;
-
-    const blob = new Blob([resumeContent], { type: 'text/plain' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'James_Wachacha_Resume.txt';
-    document.body.appendChild(a);
-    a.click();
-    window.URL.revokeObjectURL(url);
-    document.body.removeChild(a);
+    const doc = new jsPDF();
+    
+    // Set font and title
+    doc.setFontSize(20);
+    doc.setFont('helvetica', 'bold');
+    doc.text('JAMES WACHACHA', 20, 20);
+    
+    doc.setFontSize(14);
+    doc.setFont('helvetica', 'normal');
+    doc.text('Machine Learning Specialist & AI Engineer', 20, 30);
+    
+    // Contact information
+    doc.setFontSize(10);
+    doc.text('Phone: +254 729215235 | Email: jameswachacha@gmail.com', 20, 40);
+    doc.text('Location: Nairobi, Kenya | Portfolio: https://wachacha-jay.github.io/James_wachacha/', 20, 47);
+    
+    // Professional Summary
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'bold');
+    doc.text('PROFESSIONAL SUMMARY', 20, 60);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(10);
+    
+    const summaryLines = doc.splitTextToSize(cvPreview.summary, 170);
+    let yPosition = 70;
+    summaryLines.forEach((line: string) => {
+      doc.text(line, 20, yPosition);
+      yPosition += 5;
+    });
+    
+    // Work Experience
+    yPosition += 10;
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'bold');
+    doc.text('WORK EXPERIENCE', 20, yPosition);
+    yPosition += 10;
+    
+    fullExperience.forEach((exp) => {
+      doc.setFontSize(11);
+      doc.setFont('helvetica', 'bold');
+      doc.text(exp.title, 20, yPosition);
+      yPosition += 6;
+      
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'normal');
+      doc.text(exp.company, 20, yPosition);
+      yPosition += 5;
+      doc.text(exp.period, 20, yPosition);
+      yPosition += 8;
+      
+      exp.achievements.forEach((achievement) => {
+        const achievementLines = doc.splitTextToSize(`• ${achievement}`, 165);
+        achievementLines.forEach((line: string) => {
+          if (yPosition > 270) {
+            doc.addPage();
+            yPosition = 20;
+          }
+          doc.text(line, 25, yPosition);
+          yPosition += 5;
+        });
+      });
+      yPosition += 5;
+    });
+    
+    // Add new page for projects and education
+    doc.addPage();
+    yPosition = 20;
+    
+    // Featured Projects
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'bold');
+    doc.text('FEATURED PROJECTS', 20, yPosition);
+    yPosition += 10;
+    
+    keyProjects.forEach((project) => {
+      doc.setFontSize(11);
+      doc.setFont('helvetica', 'bold');
+      doc.text(project.title, 20, yPosition);
+      yPosition += 6;
+      
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'normal');
+      const descLines = doc.splitTextToSize(project.description, 170);
+      descLines.forEach((line: string) => {
+        doc.text(line, 20, yPosition);
+        yPosition += 5;
+      });
+      
+      doc.setFont('helvetica', 'italic');
+      doc.text(`Tools: ${project.tools}`, 20, yPosition);
+      yPosition += 10;
+    });
+    
+    // Education
+    yPosition += 5;
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'bold');
+    doc.text('EDUCATION', 20, yPosition);
+    yPosition += 10;
+    
+    education.forEach((edu) => {
+      doc.setFontSize(11);
+      doc.setFont('helvetica', 'bold');
+      doc.text(edu.degree, 20, yPosition);
+      yPosition += 6;
+      
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'normal');
+      doc.text(edu.institution, 20, yPosition);
+      yPosition += 5;
+      doc.text(edu.year, 20, yPosition);
+      yPosition += 8;
+    });
+    
+    // Technical Skills
+    yPosition += 5;
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'bold');
+    doc.text('TECHNICAL SKILLS', 20, yPosition);
+    yPosition += 10;
+    
+    const skills = [
+      'Data Analysis & Manipulation: Python (Pandas, NumPy, SciPy), SQL, Microsoft Excel',
+      'Business Intelligence: Microsoft Power BI, Tableau, Matplotlib, Seaborn, Plotly',
+      'Machine Learning & AI: TensorFlow, Keras, PyTorch, Statistical Analysis, Regression',
+      'Process Improvement: Data Pipelines, FastAPI, Flask, LangChain, LangGraph'
+    ];
+    
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'normal');
+    skills.forEach((skill) => {
+      const skillLines = doc.splitTextToSize(skill, 170);
+      skillLines.forEach((line: string) => {
+        doc.text(line, 20, yPosition);
+        yPosition += 5;
+      });
+      yPosition += 2;
+    });
+    
+    // Save the PDF
+    doc.save('James_Wachacha_Resume.pdf');
   };
 
   const cvPreview = {
