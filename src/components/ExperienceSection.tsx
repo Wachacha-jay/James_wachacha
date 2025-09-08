@@ -103,6 +103,11 @@ const ExperienceSection = () => {
       tools: "Python (PyTorch, MTCNN, OpenCV, TensorFlow), Flask, Computer Vision, Real-time Processing"
     },
     {
+      title: "Credit Score Rating System",
+      description: "Built an end-to-end machine learning pipeline for credit score prediction featuring RESTful API, automated CI/CD deployment, and Docker containerization. Implemented comprehensive data preprocessing, feature engineering, and model evaluation with scalable cloud deployment for production use.",
+      tools: "Python (Flask, scikit-learn), Machine Learning, CI/CD, Docker, Cloud Deployment, RESTful API"
+    },
+    {
       title: "Coder Companion - AI Development Assistant", 
       description: "Built an AI-powered coding assistant using LangGraph multi-agent architecture that transforms natural language requests into complete working projects through automated file-by-file development workflows. Demonstrates advanced AI automation and code generation capabilities.",
       tools: "Python (LangGraph, LangChain), Multi-Agent Systems, AI Automation, Code Generation"
