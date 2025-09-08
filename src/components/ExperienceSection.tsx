@@ -7,6 +7,85 @@ import { ChevronDown, ChevronUp, Download, Mail, Phone, MapPin, Globe } from 'lu
 const ExperienceSection = () => {
   const [showFullCV, setShowFullCV] = useState(false);
 
+  const downloadResume = () => {
+    const resumeContent = `
+JAMES WACHACHA
+Machine Learning Specialist & AI Engineer
+
+CONTACT INFORMATION
+Phone: +254 729215235
+Email: jameswachacha@gmail.com
+Location: Nairobi, Kenya
+Portfolio: https://wachacha-jay.github.io/James_wachacha/
+
+PROFESSIONAL SUMMARY
+${cvPreview.summary}
+
+WORK EXPERIENCE
+
+Senior Data Analyst / Machine Learning Engineer
+Bulwark Industries - Leading Gypsum Products Manufacturer
+January 2023 – Present | Nairobi, Kenya
+
+${fullExperience[0].description}
+
+Key Achievements:
+${fullExperience[0].achievements.map(achievement => `• ${achievement}`).join('\n')}
+
+Software Engineer / Data Analyst
+TZAN Telcom
+September 2022 – September 2023 | Nairobi, Kenya
+
+${fullExperience[1].description}
+
+Key Achievements:
+${fullExperience[1].achievements.map(achievement => `• ${achievement}`).join('\n')}
+
+Data Scientist / Analytics Consultant
+Freelance & Contract Projects
+September 2022 – December 2022 | Remote
+
+${fullExperience[2].description}
+
+Key Achievements:
+${fullExperience[2].achievements.map(achievement => `• ${achievement}`).join('\n')}
+
+FEATURED PROJECTS
+
+${keyProjects.map(project => `
+${project.title}
+${project.description}
+Tools: ${project.tools}
+`).join('\n')}
+
+EDUCATION
+
+${education.map(edu => `
+${edu.degree}
+${edu.institution}
+${edu.year}
+${edu.majors ? `Majors: ${edu.majors}` : ''}
+`).join('\n')}
+
+TECHNICAL SKILLS
+
+Data Analysis & Manipulation: Python (Pandas, NumPy, SciPy), SQL (SQL Server, MySQL, PostgreSQL), Microsoft Excel, Google Sheets
+Business Intelligence & Visualization: Microsoft Power BI, Tableau, Matplotlib, Seaborn, Plotly
+Machine Learning & AI: Statistical Analysis, Regression, Classification, Clustering, TensorFlow, Keras, PyTorch
+Process Improvement & Automation: Data Pipelines, FastAPI, Flask, Automation Scripting, LangChain, LangGraph
+    `;
+
+    const blob = new Blob([resumeContent], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'James_Wachacha_Resume.txt';
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+  };
+
   const cvPreview = {
     name: "JAMES WACHACHA",
     title: "Machine Learning Specialist & AI Engineer",
@@ -229,11 +308,11 @@ const ExperienceSection = () => {
 
                   <div className="text-center pt-4">
                     <Button
-                      onClick={() => setShowFullCV(true)}
+                      onClick={downloadResume}
                       className="bg-blue-600 hover:bg-blue-700 text-white"
                     >
                       <Download className="mr-2 h-4 w-4" />
-                      View Complete Resume
+                      Download Complete Resume
                     </Button>
                   </div>
                 </div>
