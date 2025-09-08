@@ -98,24 +98,19 @@ const ExperienceSection = () => {
 
   const keyProjects = [
     {
-      title: "Production Quality Prediction System",
-      description: "Computer vision ML model for real-time gypsum product quality assessment, reducing defect rates by 25% through automated visual inspection",
-      tools: "Python (PyTorch, OpenCV, scikit-learn), MLOps, Computer Vision, REST API"
+      title: "Face Detection & Recognition System",
+      description: "Developed a comprehensive computer vision system using MTCNN and Inception networks achieving 96% face detection accuracy and 93% recognition accuracy. Built interactive Flask web application with real-time video processing, face alignment, and feature extraction for identity verification systems.",
+      tools: "Python (PyTorch, MTCNN, OpenCV, TensorFlow), Flask, Computer Vision, Real-time Processing"
     },
     {
-      title: "Demand Forecasting & Inventory Optimization",
-      description: "Time series forecasting models for inventory management across 10+ product lines, achieving 30% improvement in forecast accuracy",
-      tools: "Python (TensorFlow, ARIMA, Prophet), SQL, Power BI, Statistical Modeling"
-    },
-    {
-      title: "Customer Sentiment Analysis Engine",
-      description: "NLP-powered system for analyzing customer feedback and reviews, improving customer retention by 18% through actionable insights",
-      tools: "Python (NLTK, spaCy, Transformers), NLP, Sentiment Analysis, Data Visualization"
-    },
-    {
-      title: "Coder Companion - AI Development Assistant",
-      description: "Multi-agent AI system built with LangGraph for automated code generation and project development workflows",
+      title: "Coder Companion - AI Development Assistant", 
+      description: "Built an AI-powered coding assistant using LangGraph multi-agent architecture that transforms natural language requests into complete working projects through automated file-by-file development workflows. Demonstrates advanced AI automation and code generation capabilities.",
       tools: "Python (LangGraph, LangChain), Multi-Agent Systems, AI Automation, Code Generation"
+    },
+    {
+      title: "RAG Parliamentary Document Analyzer",
+      description: "Designed and implemented a comprehensive Retrieval-Augmented Generation system for analyzing Kenyan parliamentary documents including Hansard reports. Features complete RAG pipeline from data ingestion to intelligent contextual query answering with advanced document understanding.",
+      tools: "Python (LangChain, LangGraph), Embeddings, Vector Database, RAG, Document Analysis, NLP"
     }
   ];
 
