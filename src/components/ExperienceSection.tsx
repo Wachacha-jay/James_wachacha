@@ -50,6 +50,19 @@ const ExperienceSection = () => {
       ]
     },
     {
+      title: 'Software Engineer / Data Analyst',
+      company: 'TZAN Telcom',
+      period: 'September 2022 – September 2023',
+      location: 'Nairobi, Kenya',
+      description: 'Developed data engineering solutions and analytics systems for telecommunications operations, focusing on financial automation, network optimization, and system modernization.',
+      achievements: [
+        'Designed financial documentation pipeline using Python and AWS S3, reducing billing errors by 25% and saving over 10 hours per month in manual reconciliation',
+        'Analyzed over 100,000 client data usage records with Python and SQL to identify network congestion patterns and optimize network performance',
+        'Migrated legacy client records to SQL-based management system (PostgreSQL), improving query speeds by 40% and enabling automated invoicing',
+        'Built real-time usage anomaly detection system using Pandas and Scikit-learn, reducing outage frequency by 20% through proactive monitoring'
+      ]
+    },
+    {
       title: 'Data Scientist / Analytics Consultant',
       company: 'Freelance & Contract Projects',
       period: 'September 2022 – December 2022',
@@ -112,6 +125,12 @@ const ExperienceSection = () => {
       company: 'Bulwark Industries',
       period: '2023 - Present',
       description: 'Leading machine learning initiatives in manufacturing optimization, developing computer vision models for quality control, and implementing predictive analytics solutions that drive operational efficiency and cost savings.'
+    },
+    {
+      title: 'Software Engineer / Data Analyst',
+      company: 'TZAN Telcom',
+      period: '2022 - 2023',
+      description: 'Developed data engineering solutions and analytics systems for telecommunications operations, focusing on financial automation, network optimization, and system modernization.'
     },
     {
       title: 'Data Scientist / Analytics Consultant',
