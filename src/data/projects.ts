@@ -3,10 +3,10 @@ import { Project } from '@/types/project';
 export const baseProjects: Project[] = [
   {
     title: 'Credit Score Rating',
-    description: 'A machine learning-based credit score prediction service built with Flask, featuring a RESTful API and web interface for predicting credit scores based on financial and personal data. Includes GitHub Actions with CI/CD pipelines, Docker containerization, and cloud deployment for scalable production use.',
+    description: 'A machine learning-based credit score prediction service built with Flask, featuring a RESTful API and web interface for predicting credit scores based on financial and personal data. Includes GitHub Actions with CI/CD pipelines, Docker containerization, and cloud deployment for scalable production use. I also implemented shap values for medel explainability',
     tech: ['Python', 'Flask', 'Machine Learning', 'GitHub Actions', 'CI/CD', 'Docker', 'Cloud Deployment', 'RESTful API', 'Data Science'],
     image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80',
-    github: 'https://github.com/Wachacha-jay/Ml_end_to_to_end_project',
+    github: 'https://github.com/Wachacha-jay/Credit_score_modeling',
     demo: '#',
     category: 'machine-learning',
     date: 'February 23, 2025',
