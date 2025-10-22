@@ -129,39 +129,6 @@ export const baseProjects: Project[] = [
     date: 'February 11, 2024'
   },
   {
-    title: 'Literature Synthesis & Gap Identifier Agent',
-    description: 'Built an intelligent agentic system for automated literature review and research gap identification focused on Non-Communicable Diseases (NCDs) in Kenya. The system automatically scrapes research papers from arXiv, processes academic literature using advanced NLP, and identifies knowledge gaps in NCD research to guide future studies.',
-    tech: ['Python', 'LangChain', 'LangGraph', 'Groq LLM', 'arXiv API', 'Scrapy', 'NLP', 'Research Analytics'],
-    image: 'https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&q=80', // abstract, literature, data
-    github: 'https://github.com/Wachacha-jay/NCD_Gap_finder_Agent',
-    demo: '#',
-    category: 'ai-automation',
-    date: 'February 10, 2025',
-    results: 'Automated analysis of 500+ research papers, identified 15 key research gaps'
-  },
-  {
-    title: 'Career Navigator Agent',
-    description: 'An intelligent agentic system designed to help people throughout their entire job search journey. The application provides personalized career guidance, job matching, resume optimization, interview preparation, and market insights. Built with modern AI technologies and containerized for scalable deployment.',
-    tech: ['LangGraph', 'LangChain', 'Flask', 'Docker', 'Python', 'AI Agents', 'Career Analytics'],
-    image: 'https://images.unsplash.com/photo-1460574283810-2aab119d8511?w=800&q=80', // abstract, guidance, building
-    github: 'https://github.com/Wachacha-jay/Career_navigator_Agent',
-    demo: '#',
-    category: 'ai-automation',
-    date: 'February 12, 2025',
-    results: 'Streamlined job search process with 85% user satisfaction rate'
-  },
-  {
-    title: 'Food Ordering Chatbot',
-    description: 'Built an intelligent food ordering chatbot using Dialogflow for natural language processing and intent recognition. Features a static web interface for user interaction, Python FastAPI backend for handling API requests and business logic, and MySQL database for storing menu items and order tracking. The system provides seamless webhook fulfillment between Dialogflow and the backend.',
-    tech: ['Dialogflow', 'Python', 'FastAPI', 'MySQL', 'Static Web Interface', 'Webhook Integration', 'NLP', 'Chatbot Development'],
-    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&q=80',
-    github: 'https://github.com/Wachacha-jay/chat_bot-diagflow',
-    demo: '#',
-    category: 'ai-automation',
-    date: 'February 20, 2025',
-    results: 'Automated food ordering with 90% intent recognition accuracy'
-  },
-  {
     title: 'Research Agent',
     description: 'Built an intelligent research tool that automates data collection, analysis, and report generation using advanced AI technologies. Features a Flask web application with Jinja2 templating for user interaction, powered by LangGraph and LangChain for complex AI workflows, and integrated with Google Gemini for natural language processing and content generation.',
     tech: ['Python', 'Flask', 'LangGraph', 'LangChain', 'Google Gemini', 'Jinja2', 'python-dotenv', 'Generative AI'],
@@ -193,5 +160,38 @@ export const baseProjects: Project[] = [
     category: 'ai-automation',
     date: 'February 26, 2025',
     results: 'Intelligent document analysis with contextual query answering capabilities'
+  },
+  {
+    title: 'Literature Synthesis & Gap Identifier Agent',
+    description: 'Built an intelligent agentic system for automated literature review and research gap identification focused on Non-Communicable Diseases (NCDs) in Kenya. The system automatically scrapes research papers from arXiv, processes academic literature using advanced NLP, and identifies knowledge gaps in NCD research to guide future studies.',
+    tech: ['Python', 'LangChain', 'LangGraph', 'Groq LLM', 'arXiv API', 'Scrapy', 'NLP', 'Research Analytics'],
+    image: 'https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&q=80',
+    github: 'https://github.com/Wachacha-jay/NCD_Gap_finder_Agent',
+    demo: '#',
+    category: 'ai-automation',
+    date: 'February 10, 2025',
+    results: 'Automated analysis of 500+ research papers, identified 15 key research gaps'
+  },
+  {
+    title: 'Career Navigator Agent',
+    description: 'An intelligent agentic system designed to help people throughout their entire job search journey. The application provides personalized career guidance, job matching, resume optimization, interview preparation, and market insights. Built with modern AI technologies and containerized for scalable deployment.',
+    tech: ['LangGraph', 'LangChain', 'Flask', 'Docker', 'Python', 'AI Agents', 'Career Analytics'],
+    image: 'https://images.unsplash.com/photo-1460574283810-2aab119d8511?w=800&q=80',
+    github: 'https://github.com/Wachacha-jay/Career_navigator_Agent',
+    demo: '#',
+    category: 'ai-automation',
+    date: 'February 12, 2025',
+    results: 'Streamlined job search process with 85% user satisfaction rate'
+  },
+  {
+    title: 'Food Ordering Chatbot',
+    description: 'Built an intelligent food ordering chatbot using Dialogflow for natural language processing and intent recognition. Features a static web interface for user interaction, Python FastAPI backend for handling API requests and business logic, and MySQL database for storing menu items and order tracking. The system provides seamless webhook fulfillment between Dialogflow and the backend.',
+    tech: ['Dialogflow', 'Python', 'FastAPI', 'MySQL', 'Static Web Interface', 'Webhook Integration', 'NLP', 'Chatbot Development'],
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&q=80',
+    github: 'https://github.com/Wachacha-jay/chat_bot-diagflow',
+    demo: '#',
+    category: 'ai-automation',
+    date: 'February 20, 2025',
+    results: 'Automated food ordering with 90% intent recognition accuracy'
   }
 ];
