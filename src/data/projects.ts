@@ -13,6 +13,17 @@ export const baseProjects: Project[] = [
     results: 'End-to-end ML pipeline with automated deployment and real-time predictions'
   },
   {
+    title: 'Movie Recommendation System',
+    description: 'A comprehensive, modular framework for building and comparing recommendation algorithms from scratch to production-ready systems. Demonstrates multiple recommendation approaches including popularity-based, content-based filtering, and collaborative filtering techniques. Experimented on a movies dataset to showcase different recommendation strategies and their effectiveness.',
+    tech: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Content-Based Filtering', 'Collaborative Filtering', 'Recommendation Systems', 'Machine Learning'],
+    image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80',
+    github: 'https://github.com/Wachacha-jay/Recommender_system',
+    demo: '#',
+    category: 'machine-learning',
+    date: 'February 28, 2025',
+    results: 'Built modular framework comparing multiple recommendation approaches'
+  },
+  {
     title: 'Face Detection & Recognition System',
     description: 'Developed a comprehensive face detection and recognition system using MTCNN for face detection and Inception networks for face recognition. Built an interactive web application with Flask for real-time face detection from video streams, face alignment, and feature extraction for identity verification. The system includes preprocessing pipelines, face embedding generation, and similarity matching algorithms with live results.',
     tech: ['Python', 'PyTorch', 'MTCNN', 'Inception Networks', 'OpenCV', 'TensorFlow', 'Flask', 'Git', 'Face Recognition', 'Computer Vision', 'Real-time Processing'],
@@ -96,16 +107,6 @@ export const baseProjects: Project[] = [
     demo: '#',
     category: 'machine-learning',
     date: 'December 10, 2024'
-  },
-  {
-    title: 'Power BI Business Dashboards',
-    description: 'Specialized in transforming complex datasets into actionable business insights through interactive Power BI dashboards. Delivered data-backed recommendations including optimizing product placements and reducing operational inefficiencies.',
-    tech: ['Power BI', 'DAX', 'Power Query', 'Excel', 'Data Modeling'],
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80', // robot/AI dash
-    github: 'https://github.com/Wachacha-jay/powerBI_Projects',
-    demo: '#',
-    category: 'machine-learning',
-    date: 'December 14, 2024'
   },
   {
     title: 'Agricultural Analysis Kenya',
