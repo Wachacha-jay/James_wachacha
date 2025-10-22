@@ -14,11 +14,11 @@ const ExperienceSection = () => {
     // Set font and title
     doc.setFontSize(20);
     doc.setFont('helvetica', 'bold');
-    doc.text('JAMES WACHACHA', 20, 20);
+    doc.text('JAMES WACHACHA NGARUIYA', 20, 20);
     
     doc.setFontSize(14);
     doc.setFont('helvetica', 'normal');
-    doc.text('Machine Learning Specialist & AI Engineer', 20, 30);
+    doc.text('Data Scientist', 20, 30);
     
     // Contact information
     doc.setFontSize(10);
@@ -131,10 +131,11 @@ const ExperienceSection = () => {
     yPosition += 10;
     
     const skills = [
-      'Data Analysis & Manipulation: Python (Pandas, NumPy, SciPy), SQL, Microsoft Excel',
-      'Business Intelligence: Microsoft Power BI, Tableau, Matplotlib, Seaborn, Plotly',
-      'Machine Learning & AI: TensorFlow, Keras, PyTorch, Statistical Analysis, Regression',
-      'Process Improvement: Data Pipelines, FastAPI, Flask, LangChain, LangGraph'
+      'GenAI/NLP & Machine Learning: Computer vision, NLP (BERT, GPT), sentiment analysis, NER, text classification, Agentic AI Workflows (LangChain, LangGraph), RAG techniques, Deep Learning (TensorFlow, Keras, PyTorch)',
+      'Data Analysis & Manipulation: Python (Pandas, NumPy, SciPy), SQL (SQL Server, MySQL, PostgreSQL), Microsoft Excel, Google Sheets',
+      'Business Intelligence & Visualization: Microsoft Power BI, Tableau, Matplotlib, Seaborn, Plotly',
+      'Process Improvement & Automation: Data Pipelines, Fast API, Flask, automation scripting',
+      'Core Competencies: Problem-Solving Skills, Analytical Mind, Organized, Results-Driven, Self-Starter, Interpersonal and Communication Skills, Collaboration'
     ];
     
     doc.setFontSize(10);
@@ -153,80 +154,78 @@ const ExperienceSection = () => {
   };
 
   const cvPreview = {
-    name: "JAMES WACHACHA",
-    title: "Machine Learning Specialist & AI Engineer",
+    name: "JAMES WACHACHA NGARUIYA",
+    title: "Data Scientist",
     contact: {
       phone: "+254 729215235",
       email: "jameswachacha@gmail.com",
       location: "Nairobi, Kenya",
       portfolio: "https://wachacha-jay.github.io/James_wachacha/"
     },
-    summary: "Machine Learning Specialist and AI Engineer with 2+ years of proven experience in developing and deploying scalable AI solutions. Expert in Python, TensorFlow, PyTorch, and scikit-learn with demonstrated success in transforming business challenges into production-ready machine learning systems. Delivered measurable results including 30% improvement in forecasting accuracy and 18% sales optimization through data-driven solutions.",
+    summary: "Highly analytical and results-driven Data Scientist with a Bachelor's degree in Mathematics and a strong foundation in Applied Data Science, eager to apply foundational experience in data analytics, problem-solving, and process improvement. I have a proven ability to collaborate effectively with cross-functional teams and deliver impactful insights. I'm a self-starter with a proactive approach to identifying and resolving discrepancies in large datasets.",
     keySkills: [
-      "Python (TensorFlow, PyTorch, scikit-learn)",
-      "Machine Learning & Deep Learning",
-      "NLP & Computer Vision",
-      "Data Engineering & MLOps",
-      "Statistical Analysis & Modeling",
-      "Power BI & Advanced Analytics"
+      "GenAI/NLP & Machine Learning",
+      "Data Analysis & Manipulation (Python, SQL)",
+      "Business Intelligence & Visualization",
+      "Process Improvement & Automation",
+      "Deep Learning (TensorFlow, PyTorch)",
+      "LangChain & Agentic AI Workflows"
     ],
     currentRole: {
-      title: "Senior Data Analyst / ML Engineer",
+      title: "Data Scientist / Analyst",
       company: "Bulwark Industries",
-      period: "Jan 2023 – Present",
+      period: "Jan 2023 – Till date",
       type: "Full-time"
     }
   };
 
   const fullExperience = [
     {
-      title: 'Senior Data Analyst / Machine Learning Engineer',
-      company: 'Bulwark Industries - Leading Gypsum Products Manufacturer',
-      period: 'January 2023 – Present',
+      title: 'Data Scientist / Analyst',
+      company: 'Bulwark Industries',
+      period: 'Jan 2023 – Till date',
       location: 'Nairobi, Kenya',
-      description: 'Lead machine learning initiatives and advanced analytics for manufacturing optimization, predictive maintenance, and business intelligence across 10+ product lines.',
+      description: 'Leading data analytics and machine learning initiatives for manufacturing optimization and business intelligence.',
       achievements: [
-        'Developed and deployed machine learning models for demand forecasting using Python (TensorFlow, scikit-learn), achieving 30% improvement in forecast accuracy and enabling $150K+ annual cost savings through optimized inventory management',
-        'Built end-to-end MLOps pipeline for production quality prediction using computer vision (OpenCV, PyTorch), reducing defect rates by 25% and improving manufacturing efficiency',
-        'Designed automated financial forecasting system with Power BI integration, processing 50K+ transactions monthly and improving budget allocation accuracy by 35%',
-        'Implemented NLP-powered customer sentiment analysis on 10K+ customer feedback records, identifying key satisfaction drivers and contributing to 18% increase in customer retention',
-        'Created real-time production monitoring dashboards using Python (Pandas, NumPy) and SQL, enabling predictive maintenance and reducing equipment downtime by 20%',
-        'Led cross-functional data science initiatives, presenting machine learning insights to C-level executives and driving data-driven strategic decisions'
+        'Customer Segmentation & Sales Optimization with NLP: Leveraged Natural Language Processing (NLP) to analyze unstructured customer feedback, reviews, and support interactions. This enabled the identification of distinct customer segments, which resulted in a 25% increase in sales conversion rates for targeted segments and a 10% reduction in sales cycle length.',
+        'Automated Reporting & Forecasting: Developed and automated monthly financial forecasting reports using Excel and Power BI. This improved budget allocation accuracy by 30% and led to a 15% reduction in raw material procurement costs by streamlining data and KPI processes.',
+        'Data Analysis: Performed statistical analysis on over 10 product lines using Python and SQL to identify underperforming SKUs, leading to an 18% boost in sales.',
+        'Dashboard Development: Designed and implemented interactive Power BI dashboards for tracking sales, inventory, and customer satisfaction, which facilitated company-wide, real-time decision-making.'
+      ]
+    },
+    {
+      title: 'Data Scientist / MEARL Support',
+      company: 'Being Africa (NGO - Non-Communicable Diseases Focus)',
+      period: 'Jan 2025 – Parttime',
+      location: 'Nairobi, Kenya',
+      description: 'Managed comprehensive data collection, quality assurance, and reporting for Noncommunicable Disease (NCD) programs ensuring accurate and timely insights for MEARL activities.',
+      achievements: [
+        'Spearheaded NCD survey data collection using Kobo Collect, tracking real-time entries and resolving inconsistencies to maintain high data accuracy and completeness.',
+        'Conducted daily check-ins with field teams and provided virtual guidance on Kobo data entry, ensuring 100% on-time data submissions.',
+        'Cleaned, aggregated, and analyzed NCD program data using Python (Pandas) and Excel, generating weekly analytical reports and visual dashboards (Power BI, Tableau) with actionable recommendations.',
+        'Ensured 100% adherence to confidentiality and data protection protocols, safeguarding sensitive health information and contributing to knowledge management efforts.'
       ]
     },
     {
       title: 'Software Engineer / Data Analyst',
       company: 'TZAN Telcom',
-      period: 'September 2022 – September 2023',
+      period: 'Sep 2022 - Sep 2023',
       location: 'Nairobi, Kenya',
       description: 'Developed data engineering solutions and analytics systems for telecommunications operations, focusing on financial automation, network optimization, and system modernization.',
       achievements: [
-        'Designed financial documentation pipeline using Python and AWS S3, reducing billing errors by 25% and saving over 10 hours per month in manual reconciliation',
-        'Analyzed over 100,000 client data usage records with Python and SQL to identify network congestion patterns and optimize network performance',
-        'Migrated legacy client records to SQL-based management system (PostgreSQL), improving query speeds by 40% and enabling automated invoicing',
-        'Built real-time usage anomaly detection system using Pandas and Scikit-learn, reducing outage frequency by 20% through proactive monitoring'
-      ]
-    },
-    {
-      title: 'Data Scientist / Analytics Consultant',
-      company: 'Freelance & Contract Projects',
-      period: 'September 2022 – December 2022',
-      location: 'Remote',
-      description: 'Delivered specialized machine learning and data science solutions for multiple clients across telecommunications and healthcare sectors.',
-      achievements: [
-        'Developed deep learning models for network anomaly detection processing 100K+ data points, improving system reliability by 20% for telecommunications client',
-        'Built automated data pipeline using Python and PostgreSQL for healthcare data management, reducing manual processing time by 70%',
-        'Created customer segmentation models using unsupervised learning (K-means, DBSCAN), enabling targeted marketing strategies with 15% improved conversion rates',
-        'Implemented real-time fraud detection system using ensemble methods (Random Forest, XGBoost), achieving 95% accuracy in fraud identification'
+        'Financial Documentation Pipeline: Designed a financial documentation pipeline using Python and AWS S3, reducing billing errors by 25% and saving over 10 hours per month in manual reconciliation.',
+        'Network Optimization: Analyzed over 100,000 client data usage records with Python and SQL to identify network congestion patterns.',
+        'Data Migration: Migrated legacy client records to a SQL-based management system (PostgreSQL), which improved query speeds by 40% and enabled automated invoicing.',
+        'Anomaly Detection: Built a real-time usage anomaly detection system using Pandas and Scikit-learn, reducing outage frequency by 20%.'
       ]
     }
   ];
 
   const education = [
     {
-      degree: "BACHELOR OF SCIENCE IN MATHEMATICS",
-      institution: "University of Embu",
-      year: "Graduated: September 2018"
+      degree: "APPLIED DATA SCIENCE AND DEEP LEARNING",
+      institution: "Worldquant University",
+      year: "Finished: February 2025"
     },
     {
       degree: "SOFTWARE ENGINEERING",
@@ -234,54 +233,48 @@ const ExperienceSection = () => {
       year: "Finished 2024"
     },
     {
-      degree: "APPLIED DATA SCIENCE AND DEEP LEARNING",
-      institution: "Worldquant University",
-      year: "Finished: February 2025",
-      majors: "Data Science and Machine Learning"
+      degree: "BACHELOR OF SCIENCE IN MATHEMATICS",
+      institution: "University of Embu",
+      year: "Graduated: September 2018"
     }
   ];
 
   const keyProjects = [
     {
-      title: "Face Detection & Recognition System",
-      description: "Developed a comprehensive computer vision system using MTCNN and Inception networks achieving 96% face detection accuracy and 93% recognition accuracy. Built interactive Flask web application with real-time video processing, face alignment, and feature extraction for identity verification systems.",
-      tools: "Python (PyTorch, MTCNN, OpenCV, TensorFlow), Flask, Computer Vision, Real-time Processing"
+      title: "Credit Scoring Application (End-to-End ML Pipeline)",
+      description: "Designed and deployed an end-to-end credit scoring system for a FinTech client to evaluate loan applicants using alternative credit signals. Engineered features from structured and unstructured data, achieving 25% improvement in prediction accuracy. Built and compared ML models with XGBoost selected for production. Implemented explainable AI (SHAP, LIME) for model interpretability. Deployed as REST API using Flask + Docker on AWS EC2 with automated training pipelines using Airflow and MLflow for experiment tracking. Reduced default rates by 15% within the first 3 months.",
+      tools: "Python, Scikit-learn, Flask, SQL, AWS, Docker, XGBoost, SHAP, LIME, Airflow, MLflow"
     },
     {
-      title: "Credit Score Rating System",
-      description: "Built an end-to-end machine learning pipeline for credit score prediction featuring RESTful API, automated CI/CD deployment, and Docker containerization. Implemented comprehensive data preprocessing, feature engineering, and model evaluation with scalable cloud deployment for production use.",
-      tools: "Python (Flask, scikit-learn), Machine Learning, CI/CD, Docker, Cloud Deployment, RESTful API"
+      title: "AI-Powered Customer Insight & Feedback System for LMICs",
+      description: "Designed and built an AI-enabled system for automating the collection, analysis, and reporting of customer/community feedback in low- and middle-income countries. Designed LLM-based workflow using LangChain and Python to process unstructured feedback from various sources (SMS, social media, call center transcripts). Used NLP techniques like sentiment analysis and NER to extract key entities and emotions. Employed prompt engineering to generate summary reports and actionable insights. Deployed using Flask and Docker to provide REST API for easy integration.",
+      tools: "Python, LangChain, NLP, Sentiment Analysis, NER, Flask, Docker, Prompt Engineering"
     },
     {
-      title: "Coder Companion - AI Development Assistant", 
-      description: "Built an AI-powered coding assistant using LangGraph multi-agent architecture that transforms natural language requests into complete working projects through automated file-by-file development workflows. Demonstrates advanced AI automation and code generation capabilities.",
-      tools: "Python (LangGraph, LangChain), Multi-Agent Systems, AI Automation, Code Generation"
-    },
-    {
-      title: "RAG Parliamentary Document Analyzer",
-      description: "Designed and implemented a comprehensive Retrieval-Augmented Generation system for analyzing Kenyan parliamentary documents including Hansard reports. Features complete RAG pipeline from data ingestion to intelligent contextual query answering with advanced document understanding.",
-      tools: "Python (LangChain, LangGraph), Embeddings, Vector Database, RAG, Document Analysis, NLP"
+      title: "Automated Bank Reconciliation & Discrepancy Resolution System",
+      description: "Developed a Python-based system to automate the reconciliation of simulated bank statements with internal transaction logs, identifying and flagging discrepancies for further investigation. Designed data pipeline to ingest simulated bank statements and internal transaction data from various formats. Implemented algorithms using Pandas to match transactions based on multiple criteria, identifying perfectly matched, partially matched, and unmatched transactions. Created discrepancy reporting module that categorized unreconciled items and suggested potential causes. Significantly improved efficiency, reducing hypothetical manual reconciliation time by 70%.",
+      tools: "Python (Pandas), Excel, SQL, Jupyter Notebook"
     }
   ];
 
   const experiences = [
     {
-      title: 'Senior Data Analyst / Machine Learning Engineer',
+      title: 'Data Scientist / Analyst',
       company: 'Bulwark Industries',
       period: '2023 - Present',
-      description: 'Leading machine learning initiatives in manufacturing optimization, developing computer vision models for quality control, and implementing predictive analytics solutions that drive operational efficiency and cost savings.'
+      description: 'Leading data analytics and machine learning initiatives for manufacturing optimization and business intelligence. Leveraging NLP for customer segmentation, developing automated forecasting systems, and creating interactive dashboards for real-time decision-making.'
+    },
+    {
+      title: 'Data Scientist / MEARL Support',
+      company: 'Being Africa (NGO)',
+      period: '2025 - Present',
+      description: 'Managing comprehensive data collection, quality assurance, and reporting for Noncommunicable Disease programs. Spearheading NCD survey data collection, conducting analysis using Python and Excel, and generating visual dashboards with actionable recommendations.'
     },
     {
       title: 'Software Engineer / Data Analyst',
       company: 'TZAN Telcom',
       period: '2022 - 2023',
       description: 'Developed data engineering solutions and analytics systems for telecommunications operations, focusing on financial automation, network optimization, and system modernization.'
-    },
-    {
-      title: 'Data Scientist / Analytics Consultant',
-      company: 'Freelance & Contract Projects',
-      period: '2022 - 2023',
-      description: 'Delivered specialized AI and machine learning solutions for telecommunications and healthcare clients, including network anomaly detection, fraud prevention systems, and automated data pipelines.'
     }
   ];
 
@@ -461,9 +454,6 @@ const ExperienceSection = () => {
                           <h4 className="font-semibold text-white">{edu.degree}</h4>
                           <p className="text-blue-400 text-sm">{edu.institution}</p>
                           <p className="text-white/60 text-sm">{edu.year}</p>
-                          {edu.majors && (
-                            <p className="text-white/70 text-sm">Majors: {edu.majors}</p>
-                          )}
                         </div>
                       ))}
                     </div>
