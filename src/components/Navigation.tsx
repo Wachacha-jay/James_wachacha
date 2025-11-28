@@ -83,7 +83,7 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
             </div>
           )}
 
-          <div className="hidden md:block flex-1"></div>
+
         </div>
       </div>
     </nav>
