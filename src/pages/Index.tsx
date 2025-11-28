@@ -26,28 +26,7 @@ const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [projects, setProjects] = useState<Project[]>(() => processImages(baseProjects));
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'about', 'applications', 'skills', 'projects', 'experience', 'contact'];
-      const current = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
-      });
-      if (current) setActiveSection(current);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth' });
-  };
+  // Scroll listener removed as we are switching to tab-based navigation
 
   const handleAddProject = (newProject: Omit<Project, 'category'>) => {
     const projectWithCategory: Project = {
@@ -62,23 +41,43 @@ const Index = () => {
     setProjects(projects.filter((project, i) => !(i === index && project.category === category)));
   };
 
+  const renderSection = () => {
+    switch (activeSection) {
+      case 'home':
+        return <HeroSection onSectionClick={setActiveSection} />;
+      case 'about':
+        return <AboutSection />;
+      case 'applications': // Keeping this if it was part of the original flow, though not in nav items explicitly in previous code, let's check nav items
+        return <ApplicationsSection />;
+      case 'skills':
+        return <SkillsSection />;
+      case 'projects':
+        return (
+          <ProjectsSection
+            projects={projects}
+            onAddProject={handleAddProject}
+            onDeleteProject={handleDeleteProject}
+          />
+        );
+      case 'experience':
+        return <ExperienceSection />;
+      case 'contact':
+        return <ContactSection />;
+      default:
+        return <HeroSection onSectionClick={setActiveSection} />;
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-      <Navigation activeSection={activeSection} onSectionClick={scrollToSection} />
-      <HeroSection onSectionClick={scrollToSection} />
-      <AboutSection />
-      <ApplicationsSection />
-      <SkillsSection />
-      <ProjectsSection 
-        projects={projects} 
-        onAddProject={handleAddProject} 
-        onDeleteProject={handleDeleteProject} 
-      />
-      <ExperienceSection />
-      <ContactSection />
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
+      <Navigation activeSection={activeSection} onSectionClick={setActiveSection} />
+
+      <main className="flex-grow container mx-auto px-6 py-8 animate-in fade-in duration-500">
+        {renderSection()}
+      </main>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-white/10">
+      <footer className="py-8 border-t border-white/10 mt-auto">
         <div className="container mx-auto px-6 text-center">
           <p className="text-white/60">
             © 2025 James Wachacha Portfolio. Built with React & Tailwind CSS.

@@ -7,25 +7,31 @@ interface NavigationProps {
 }
 
 const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
+  const navItems = ['Home', 'About', 'Skills', 'Projects', 'Experience', 'Contact'];
+
   return (
-    <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-lg z-50 border-b border-white/10">
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-white">James Wachacha</h1>
-          <div className="hidden md:flex space-x-8">
-            {['Home', 'About', 'Skills', 'Projects', 'Experience', 'Contact'].map((item) => (
-              <button
-                key={item}
-                onClick={() => onSectionClick(item.toLowerCase())}
-                className={`text-sm transition-colors ${
-                  activeSection === item.toLowerCase() 
-                    ? 'text-blue-400' 
-                    : 'text-white/80 hover:text-white'
-                }`}
-              >
-                {item}
-              </button>
-            ))}
+    <nav className="w-full bg-black border-b border-white/10 sticky top-0 z-50">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col md:flex-row justify-between items-center py-4">
+          <h1 className="text-2xl font-bold text-primary mb-4 md:mb-0">James Wachacha</h1>
+          <div className="flex flex-wrap justify-center gap-2">
+            {navItems.map((item) => {
+              const id = item.toLowerCase();
+              const isActive = activeSection === id;
+              return (
+                <button
+                  key={item}
+                  onClick={() => onSectionClick(id)}
+                  className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-t-lg border-b-2 ${
+                    isActive
+                      ? 'text-primary border-primary bg-white/5'
+                      : 'text-white/60 border-transparent hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  {item}
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>
