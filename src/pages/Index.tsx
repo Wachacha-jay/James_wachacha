@@ -5,6 +5,7 @@ import ProjectsSection from '@/components/ProjectsSection';
 import ExperienceSection from '@/components/ExperienceSection';
 import ContactSection from '@/components/ContactSection';
 import ExpertiseSection from '@/components/ExpertiseSection';
+import AboutSection from '@/components/AboutSection';
 import { Project } from '@/types/project';
 import { baseProjects } from '@/data/projects';
 import { cleanImagePath } from '@/utils/imageUtils';
@@ -42,6 +43,8 @@ const Index = () => {
     switch (activeSection) {
       case 'home':
         return <HeroSection onSectionClick={setActiveSection} />;
+      case 'about':
+        return <AboutSection />;
       case 'expertise':
         return <ExpertiseSection />;
       case 'projects':

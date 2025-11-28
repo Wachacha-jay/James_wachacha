@@ -6,7 +6,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-20 bg-black">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-white text-center mb-12">Let's Connect</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">Let's Connect</h2>
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-white/80 text-lg mb-8">
             I'm always interested in discussing new opportunities, collaborations,

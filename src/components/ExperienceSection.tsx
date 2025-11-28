@@ -10,55 +10,55 @@ const ExperienceSection = () => {
 
   const downloadResume = () => {
     const doc = new jsPDF();
-    
+
     // Set font and title
     doc.setFontSize(20);
     doc.setFont('helvetica', 'bold');
     doc.text('JAMES WACHACHA NGARUIYA', 20, 20);
-    
+
     doc.setFontSize(14);
     doc.setFont('helvetica', 'normal');
     doc.text('Data Scientist', 20, 30);
-    
+
     // Contact information
     doc.setFontSize(10);
     doc.text('Phone: +254 729215235 | Email: jameswachacha@gmail.com', 20, 40);
     doc.text('Location: Nairobi, Kenya | Portfolio: https://wachacha-jay.github.io/James_wachacha/', 20, 47);
-    
+
     // Professional Summary
     doc.setFontSize(12);
     doc.setFont('helvetica', 'bold');
     doc.text('PROFESSIONAL SUMMARY', 20, 60);
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(10);
-    
+
     const summaryLines = doc.splitTextToSize(cvPreview.summary, 170);
     let yPosition = 70;
     summaryLines.forEach((line: string) => {
       doc.text(line, 20, yPosition);
       yPosition += 5;
     });
-    
+
     // Work Experience
     yPosition += 10;
     doc.setFontSize(12);
     doc.setFont('helvetica', 'bold');
     doc.text('WORK EXPERIENCE', 20, yPosition);
     yPosition += 10;
-    
+
     fullExperience.forEach((exp) => {
       doc.setFontSize(11);
       doc.setFont('helvetica', 'bold');
       doc.text(exp.title, 20, yPosition);
       yPosition += 6;
-      
+
       doc.setFontSize(10);
       doc.setFont('helvetica', 'normal');
       doc.text(exp.company, 20, yPosition);
       yPosition += 5;
       doc.text(exp.period, 20, yPosition);
       yPosition += 8;
-      
+
       exp.achievements.forEach((achievement) => {
         const achievementLines = doc.splitTextToSize(`• ${achievement}`, 165);
         achievementLines.forEach((line: string) => {
@@ -72,23 +72,23 @@ const ExperienceSection = () => {
       });
       yPosition += 5;
     });
-    
+
     // Add new page for projects and education
     doc.addPage();
     yPosition = 20;
-    
+
     // Featured Projects
     doc.setFontSize(12);
     doc.setFont('helvetica', 'bold');
     doc.text('FEATURED PROJECTS', 20, yPosition);
     yPosition += 10;
-    
+
     keyProjects.forEach((project) => {
       doc.setFontSize(11);
       doc.setFont('helvetica', 'bold');
       doc.text(project.title, 20, yPosition);
       yPosition += 6;
-      
+
       doc.setFontSize(10);
       doc.setFont('helvetica', 'normal');
       const descLines = doc.splitTextToSize(project.description, 170);
@@ -96,25 +96,25 @@ const ExperienceSection = () => {
         doc.text(line, 20, yPosition);
         yPosition += 5;
       });
-      
+
       doc.setFont('helvetica', 'italic');
       doc.text(`Tools: ${project.tools}`, 20, yPosition);
       yPosition += 10;
     });
-    
+
     // Education
     yPosition += 5;
     doc.setFontSize(12);
     doc.setFont('helvetica', 'bold');
     doc.text('EDUCATION', 20, yPosition);
     yPosition += 10;
-    
+
     education.forEach((edu) => {
       doc.setFontSize(11);
       doc.setFont('helvetica', 'bold');
       doc.text(edu.degree, 20, yPosition);
       yPosition += 6;
-      
+
       doc.setFontSize(10);
       doc.setFont('helvetica', 'normal');
       doc.text(edu.institution, 20, yPosition);
@@ -122,14 +122,14 @@ const ExperienceSection = () => {
       doc.text(edu.year, 20, yPosition);
       yPosition += 8;
     });
-    
+
     // Technical Skills
     yPosition += 5;
     doc.setFontSize(12);
     doc.setFont('helvetica', 'bold');
     doc.text('TECHNICAL SKILLS', 20, yPosition);
     yPosition += 10;
-    
+
     const skills = [
       'GenAI/NLP & Machine Learning: Computer vision, NLP (BERT, GPT), sentiment analysis, NER, text classification, Agentic AI Workflows (LangChain, LangGraph), RAG techniques, Deep Learning (TensorFlow, Keras, PyTorch)',
       'Data Analysis & Manipulation: Python (Pandas, NumPy, SciPy), SQL (SQL Server, MySQL, PostgreSQL), Microsoft Excel, Google Sheets',
@@ -137,7 +137,7 @@ const ExperienceSection = () => {
       'Process Improvement & Automation: Data Pipelines, Fast API, Flask, automation scripting',
       'Core Competencies: Problem-Solving Skills, Analytical Mind, Organized, Results-Driven, Self-Starter, Interpersonal and Communication Skills, Collaboration'
     ];
-    
+
     doc.setFontSize(10);
     doc.setFont('helvetica', 'normal');
     skills.forEach((skill) => {
@@ -148,7 +148,7 @@ const ExperienceSection = () => {
       });
       yPosition += 2;
     });
-    
+
     // Save the PDF
     doc.save('James_Wachacha_Resume.pdf');
   };
@@ -281,8 +281,8 @@ const ExperienceSection = () => {
   return (
     <section id="experience" className="py-20 bg-black">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-white text-center mb-12">Professional Experience</h2>
-        
+        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">Professional Experience</h2>
+
         {/* CV Preview Card */}
         <div className="max-w-4xl mx-auto mb-16">
           <Card className="bg-white/5 backdrop-blur-lg border-white/10 hover:border-primary/30 transition-colors">

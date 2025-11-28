@@ -72,7 +72,7 @@ const ExpertiseSection = () => {
 
                 {/* Section Header */}
                 <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Professional Expertise</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Professional Expertise</h2>
                     <p className="text-white/60 text-lg max-w-2xl mx-auto">
                         A comprehensive overview of my technical capabilities and their practical applications in solving real-world business challenges.
                     </p>

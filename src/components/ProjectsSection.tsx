@@ -56,7 +56,7 @@ const ProjectsSection = ({ projects, onAddProject, onDeleteProject }: ProjectsSe
     <section id="projects" className="py-20 bg-black">
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-4xl font-bold text-white">Featured Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">Featured Projects</h2>
           <Button
             onClick={() => setShowAddProject(true)}
             className="bg-primary hover:bg-yellow-600 text-black font-semibold"

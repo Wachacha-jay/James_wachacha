@@ -29,9 +29,9 @@ const HeroSection = ({ onSectionClick }: HeroSectionProps) => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tight text-white leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-tight text-white leading-tight">
               James Wachacha
-              <span className="block text-4xl md:text-5xl mt-2 font-light text-white/80">
+              <span className="block text-2xl md:text-4xl lg:text-5xl mt-2 font-light text-white/80">
                 Data Scientist & <span className="text-primary">Machine Learning Engineer</span>
               </span>
             </h1>

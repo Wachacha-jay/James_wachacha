@@ -1,44 +1,68 @@
-
-import { Database, Award, MapPin } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { FileText, Github, Linkedin, Mail } from 'lucide-react';
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 bg-black/20">
+    <section id="about" className="py-20 bg-black">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-8">About Me</h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="text-left">
-              <p className="text-white/80 text-lg mb-6">
-                I am a Machine Learning Specialist and AI Engineer with a strong passion for data-driven problem solving and building impactful AI solutions. With expertise in Python, TensorFlow, PyTorch, and scikit-learn, I design, develop, and deploy machine learning and deep learning models for real-world applications, ranging from NLP and computer vision to predictive analytics.
-              </p>
-              <p className="text-white/80 text-lg mb-6">
-                I thrive at the intersection of theory and application—taking business challenges, analyzing data, and transforming them into scalable, production-ready AI systems. My experience spans the full pipeline: data preprocessing, feature engineering, model training, evaluation, deployment, and optimization for performance and scalability.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {['Python Expert', 'ML Specialist', 'Power BI Certified'].map((cert) => (
-                  <Badge key={cert} variant="secondary" className="bg-blue-600/20 text-blue-300">
-                    <Award className="w-4 h-4 mr-1" />
-                    {cert}
-                  </Badge>
-                ))}
+        <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">About Me</h2>
+
+        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          {/* Image / Visual Column */}
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-yellow-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+            <div className="relative aspect-square overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
+              {/* Placeholder for profile image - using a gradient/pattern for now if no image */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/10 flex items-center justify-center">
+                <span className="text-white/20 text-6xl font-bold">JW</span>
               </div>
-              <div className="flex gap-4 text-white/60">
-                <div className="flex items-center">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  Nairobi, Kenya
-                </div>
-              </div>
+              {/* <img 
+                src="/path/to/profile-image.jpg" 
+                alt="James Wachacha" 
+                className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500" 
+              /> */}
             </div>
-            <div className="relative">
-              <div className="w-80 h-80 mx-auto bg-gradient-to-r from-blue-600 to-purple-600 rounded-full p-1">
-                <div className="w-full h-full bg-slate-900 rounded-full flex items-center justify-center">
-                  <div className="text-center">
-                    <Database className="w-20 h-20 text-blue-400 mx-auto mb-4" />
-                    <p className="text-white font-semibold">Data-Driven Innovation</p>
-                  </div>
-                </div>
+          </div>
+
+          {/* Content Column */}
+          <div className="space-y-6">
+            <h3 className="text-2xl md:text-3xl font-bold text-white">
+              Data Scientist & <span className="text-primary">Machine Learning Engineer</span>
+            </h3>
+
+            <p className="text-white/70 text-lg leading-relaxed">
+              I am a highly analytical and results-driven Data Scientist with a strong foundation in Applied Data Science and Mathematics.
+              My passion lies in transforming complex datasets into actionable insights that drive business growth and operational efficiency.
+            </p>
+
+            <p className="text-white/70 text-lg leading-relaxed">
+              With expertise in Machine Learning, Natural Language Processing (NLP), and Agentic AI workflows, I build intelligent systems
+              that solve real-world problems. From predictive modeling to automated reporting pipelines, I enjoy tackling challenges
+              that require a blend of technical depth and strategic thinking.
+            </p>
+
+            <div className="pt-6 flex flex-wrap gap-4">
+              <Button className="bg-primary hover:bg-yellow-600 text-black font-semibold">
+                <FileText className="mr-2 h-4 w-4" />
+                Download CV
+              </Button>
+
+              <div className="flex gap-2">
+                <Button variant="outline" size="icon" className="border-white/20 text-white hover:bg-white/10 hover:text-primary hover:border-primary/50" asChild>
+                  <a href="https://github.com/wachacha-jay" target="_blank" rel="noopener noreferrer">
+                    <Github className="h-5 w-5" />
+                  </a>
+                </Button>
+                <Button variant="outline" size="icon" className="border-white/20 text-white hover:bg-white/10 hover:text-primary hover:border-primary/50" asChild>
+                  <a href="https://www.linkedin.com/in/james-wachacha" target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                </Button>
+                <Button variant="outline" size="icon" className="border-white/20 text-white hover:bg-white/10 hover:text-primary hover:border-primary/50" asChild>
+                  <a href="mailto:jameswachacha@gmail.com">
+                    <Mail className="h-5 w-5" />
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
