@@ -80,7 +80,7 @@ const Index = () => {
       <footer className="py-8 border-t border-white/10 mt-auto">
         <div className="container mx-auto px-6 text-center">
           <p className="text-white/60">
-            © 2025 James Wachacha Portfolio. Built with React & Tailwind CSS.
+            © 2025 James Wachacha Portfolio.
           </p>
         </div>
       </footer>
