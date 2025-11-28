@@ -22,12 +22,17 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
 
           <div className="w-full md:w-auto flex justify-between items-center">
             <div className="text-center md:text-left">
-              <h1 className="text-2xl font-bold text-primary">Proffesional Portfolio</h1>
+              <h1 className="text-xl md:text-2xl font-bold text-white tracking-tight">
+                James <span className="text-primary">Wachacha</span>
+              </h1>
+              <p className="text-[10px] md:text-xs text-white/60 uppercase tracking-widest font-medium">
+                Data & AI Solutions
+              </p>
             </div>
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden text-white hover:text-primary transition-colors"
+              className="md:hidden text-white hover:text-primary transition-colors p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
