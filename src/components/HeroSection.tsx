@@ -32,7 +32,7 @@ const HeroSection = ({ onSectionClick }: HeroSectionProps) => {
             <h1 className="text-6xl md:text-8xl font-bold tracking-tight text-white leading-tight">
               James Wachacha
               <span className="block text-4xl md:text-5xl mt-2 font-light text-white/80">
-                Data Scientist & <span className="text-primary">Analyst</span>
+                Data Scientist & <span className="text-primary">Machine Learning Engineer</span>
               </span>
             </h1>
 
@@ -65,7 +65,7 @@ const HeroSection = ({ onSectionClick }: HeroSectionProps) => {
             {/* Tech Stack / Stats */}
             <div className="pt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center border-t border-white/5 mt-16">
               {[
-                { label: "Experience", value: "5+ Years" },
+                { label: "Experience", value: "3+ Years" },
                 { label: "Projects", value: "50+" },
                 { label: "Clients", value: "20+" },
                 { label: "Availability", value: "Open" }

@@ -7,7 +7,7 @@ interface NavigationProps {
 }
 
 const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
-  const navItems = ['Home', 'About', 'Skills', 'Projects', 'Experience', 'Contact'];
+  const navItems = ['Home', 'Expertise', 'Projects', 'Experience', 'Contact'];
 
   return (
     <nav className="w-full bg-black border-b border-white/10 sticky top-0 z-50">

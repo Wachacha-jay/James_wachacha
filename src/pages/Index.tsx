@@ -1,4 +1,4 @@
-
+```
 import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
@@ -8,6 +8,7 @@ import SkillsSection from '@/components/SkillsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import ExperienceSection from '@/components/ExperienceSection';
 import ContactSection from '@/components/ContactSection';
+import ExpertiseSection from '@/components/ExpertiseSection';
 import { Project } from '@/types/project';
 import { baseProjects } from '@/data/projects';
 import { cleanImagePath } from '@/utils/imageUtils';
@@ -45,12 +46,8 @@ const Index = () => {
     switch (activeSection) {
       case 'home':
         return <HeroSection onSectionClick={setActiveSection} />;
-      case 'about':
-        return <AboutSection />;
-      case 'applications': // Keeping this if it was part of the original flow, though not in nav items explicitly in previous code, let's check nav items
-        return <ApplicationsSection />;
-      case 'skills':
-        return <SkillsSection />;
+      case 'expertise':
+        return <ExpertiseSection />;
       case 'projects':
         return (
           <ProjectsSection
