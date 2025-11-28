@@ -53,13 +53,13 @@ const ProjectsSection = ({ projects, onAddProject, onDeleteProject }: ProjectsSe
   };
 
   return (
-    <section id="projects" className="py-20 bg-black/20">
+    <section id="projects" className="py-20 bg-black">
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-4xl font-bold text-white">Featured Projects</h2>
-          <Button 
+          <Button
             onClick={() => setShowAddProject(true)}
-            className="bg-blue-600 hover:bg-blue-700"
+            className="bg-primary hover:bg-yellow-600 text-black font-semibold"
           >
             <Plus className="w-4 h-4 mr-2" />
             Add Project
@@ -68,7 +68,7 @@ const ProjectsSection = ({ projects, onAddProject, onDeleteProject }: ProjectsSe
 
         {showAddProject && (
           <div className="mb-8">
-            <AddProjectForm 
+            <AddProjectForm
               onAddProject={handleAddProject}
               onCancel={() => setShowAddProject(false)}
               selectedCategory={activeTab}
@@ -77,22 +77,22 @@ const ProjectsSection = ({ projects, onAddProject, onDeleteProject }: ProjectsSe
         )}
 
         <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as any)} className="w-full">
-          <TabsList className="grid w-full grid-cols-3 bg-white/10 mb-8">
-            <TabsTrigger 
-              value="machine-learning" 
-              className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-white/70"
+          <TabsList className="grid w-full grid-cols-3 bg-white/5 mb-8 border border-white/10">
+            <TabsTrigger
+              value="machine-learning"
+              className="data-[state=active]:bg-primary data-[state=active]:text-black text-white/70"
             >
               Machine Learning
             </TabsTrigger>
-            <TabsTrigger 
+            <TabsTrigger
               value="deep-learning"
-              className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-white/70"
+              className="data-[state=active]:bg-primary data-[state=active]:text-black text-white/70"
             >
               Deep Learning
             </TabsTrigger>
-            <TabsTrigger 
+            <TabsTrigger
               value="ai-automation"
-              className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-white/70"
+              className="data-[state=active]:bg-primary data-[state=active]:text-black text-white/70"
             >
               AI Automation
             </TabsTrigger>
@@ -102,7 +102,7 @@ const ProjectsSection = ({ projects, onAddProject, onDeleteProject }: ProjectsSe
             <TabsContent key={category} value={category}>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {getProjectsByCategory(category).map((project, index) => (
-                  <Card key={`${category}-${index}`} className="bg-white/5 backdrop-blur-lg border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105 group">
+                  <Card key={`${category}-${index}`} className="bg-white/5 backdrop-blur-lg border-white/10 hover:border-primary/50 transition-all duration-300 hover:scale-105 group">
                     <div className="relative overflow-hidden rounded-t-lg">
                       <img
                         src={project.image || fallbackImage}
@@ -128,19 +128,19 @@ const ProjectsSection = ({ projects, onAddProject, onDeleteProject }: ProjectsSe
                       </div>
                       {project.date && (
                         <div className="absolute bottom-2 left-2">
-                          <Badge className="bg-black/60 text-white text-xs">
+                          <Badge className="bg-black/80 text-primary border border-primary/20 text-xs">
                             {project.date}
                           </Badge>
                         </div>
                       )}
                     </div>
                     <CardHeader>
-                      <CardTitle className="text-white">{project.title}</CardTitle>
+                      <CardTitle className="text-white group-hover:text-primary transition-colors">{project.title}</CardTitle>
                       <CardDescription className="text-white/70">
                         {project.description}
                       </CardDescription>
                       {project.results && (
-                        <p className="text-green-400 text-sm font-semibold mt-2">
+                        <p className="text-primary text-sm font-semibold mt-2">
                           🎯 {project.results}
                         </p>
                       )}
@@ -148,14 +148,14 @@ const ProjectsSection = ({ projects, onAddProject, onDeleteProject }: ProjectsSe
                     <CardContent>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {project.tech.map((tech) => (
-                          <Badge key={tech} variant="secondary" className="bg-blue-600/20 text-blue-300">
+                          <Badge key={tech} variant="secondary" className="bg-primary/10 text-primary border border-primary/20">
                             {tech}
                           </Badge>
                         ))}
                       </div>
                       <div className="flex gap-2">
                         {project.github && (
-                          <Button size="sm" variant="outline" className="border-purple-400/50 text-purple-300 hover:bg-purple-400/10 hover:text-purple-200" asChild>
+                          <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10 hover:text-primary hover:border-primary/50" asChild>
                             <a href={project.github} target="_blank" rel="noopener noreferrer">
                               <Github className="w-4 h-4 mr-1" />
                               Project
@@ -163,7 +163,7 @@ const ProjectsSection = ({ projects, onAddProject, onDeleteProject }: ProjectsSe
                           </Button>
                         )}
                         {project.demo && (
-                          <Button size="sm" className="bg-blue-600 hover:bg-blue-700" asChild>
+                          <Button size="sm" className="bg-primary hover:bg-yellow-600 text-black font-medium" asChild>
                             <a href={project.demo} target="_blank" rel="noopener noreferrer">
                               <ExternalLink className="w-4 h-4 mr-1" />
                               Demo

@@ -10,9 +10,9 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
   const navItems = ['Home', 'Expertise', 'Projects', 'Experience', 'Contact'];
 
   return (
-    <nav className="w-full bg-black border-b border-white/10 sticky top-0 z-50">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center py-4">
+    <nav className="w-full sticky top-4 z-50 px-4">
+      <div className="container mx-auto bg-black/80 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl shadow-primary/5">
+        <div className="flex flex-col md:flex-row items-center py-4 px-6">
           <div className="flex-1 text-center md:text-left mb-4 md:mb-0">
             <h1 className="text-2xl font-bold text-primary">Proffesional Portfolio</h1>
           </div>
@@ -26,9 +26,9 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
                   <button
                     key={item}
                     onClick={() => onSectionClick(id)}
-                    className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-t-lg border-b-2 ${isActive
-                      ? 'text-primary border-primary bg-white/5'
-                      : 'text-white/60 border-transparent hover:text-white hover:bg-white/5'
+                    className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${isActive
+                      ? 'text-primary bg-white/10'
+                      : 'text-white/60 hover:text-white hover:bg-white/5'
                       }`}
                   >
                     {item}
